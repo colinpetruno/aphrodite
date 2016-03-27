@@ -1,0 +1,16 @@
+.marketing-header {
+//   @extend .bg-faded;
+  @extend .navbar;
+  @extend .navbar-light;
+
+  & > div {
+    @include pull-right();
+    @extend .nav;
+    @extend .navbar-nav;
+  }
+
+  & > div > a {
+    @extend .nav-item;
+    @extend .nav-link;
+  }
+}

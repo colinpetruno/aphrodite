@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "shared/fonts" %>
+
+    <title>CssManager</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag    'marketing', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'marketing', 'data-turbolinks-track' => 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
