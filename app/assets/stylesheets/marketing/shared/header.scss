@@ -1,5 +1,4 @@
 .marketing-header {
-//   @extend .bg-faded;
   @extend .navbar;
   @extend .navbar-light;
 
@@ -12,5 +11,7 @@
   & > div > a {
     @extend .nav-item;
     @extend .nav-link;
+
+    color: #feffe7;
   }
 }

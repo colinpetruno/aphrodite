@@ -1,0 +1,58 @@
+<html>
+
+  <head>
+    <link id="cssManagerStylesheet" rel="stylesheet" type="text/css" href="http://localhost:3000/stylesheets/7-some-name.css">
+
+    <script type="text/javascript">
+      var cssManager = {};
+      cssManager.getParameterByName = function (name) {
+          var url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      cssManager.previewCss = cssManager.getParameterByName("preview-css");
+      if(cssManager.previewCss == "true") {
+        cssManager.styleTag = document.getElementById("cssManagerStylesheet")
+        cssManager.styleTag.href = cssManager.styleTag.href + "?preview=true"
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          this is a test page<br><br>
+          <div class="row">
+            <div class="col-sm-6"> 
+              <button class="btn btn-primary">Default Button</button><br>
+            </div>
+
+            <div class="col-sm-6"> 
+              <button class="btn btn-success">Default Success</button>
+              <br>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked /> Radio 1 (preselected)
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

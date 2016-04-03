@@ -1,12 +1,9 @@
-<div class="hero-section">
-  <div>
-    <%= render "shared/marketing/header" %>
-    <div class="hero-content">
-      <h3>Manage Your Websites Appeal</h3>
-      <p>Let your designers take control of your sites look and not have to
-        bother developers</p>
+<%= render "marketing/shared/hero_block" do %>
+  <div class="hero-content">
+    <h3>Manage Your Websites Appeal</h3>
+    <p>Let your designers take control of your sites look and not have to
+      bother developers</p>
 
-      <button class="btn btn-warning">Get Started</button>
-    </div>
+    <%= link_to "Get Started", new_registration_path, class: "btn btn-warning" %>
   </div>
-</div>
+<% end %>

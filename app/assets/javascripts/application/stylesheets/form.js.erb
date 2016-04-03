@@ -1,0 +1,9 @@
+$(function(){
+  $(document).on("change", "#stylesheet_framework", function(){
+    if($(this).val()) {
+      $.get('/stylesheets/' + $(this).val() + '/versions');
+    } else {
+      $("#stylesheet_version").empty();
+    }
+  });
+});

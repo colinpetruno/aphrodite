@@ -1,0 +1,10 @@
+<nav class="application-header">
+  <div>
+    <%= link_to "Stylesheets", stylesheets_path %>
+    <%#<a class="active" href="#">Home <span class="sr-only">(current)</span></a>%>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <a href="#">About</a>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  </div>
+</nav>

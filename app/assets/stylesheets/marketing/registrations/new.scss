@@ -1,0 +1,7 @@
+.new-registration {
+  @include make-container();
+
+  & > div {
+    @include make-row();
+  }
+}

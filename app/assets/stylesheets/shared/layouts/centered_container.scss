@@ -1,0 +1,13 @@
+.centered-container {
+  @include make-container();
+  max-width: 75em;
+
+  & > div {
+    @include make-row();
+  }
+
+  & > div > div {
+    @include make-col();
+    @include make-col-span(12);
+  }
+}

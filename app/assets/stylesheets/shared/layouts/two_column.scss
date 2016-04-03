@@ -1,0 +1,39 @@
+.two-columns {
+  @include make-row();
+
+  & > div {
+    @include make-col();
+    @include make-col-span(6);
+
+    background-color: #BB4430;
+    color: #feffe7;
+    margin-top: 50px;
+    min-height: 500px;
+    padding: $modal-inner-padding;
+
+    &:first-child {
+      background-color: #feffe7;
+      color: #333;
+    }
+
+    @media (max-width: 34em) {
+      @include make-col-span(12);
+    }
+  }
+
+  &.narrow {
+    & > div {
+      @include make-col();
+      @include make-col-span(4);
+
+      &:first-child {
+        @include make-col-offset(2);
+      }
+
+      @media (max-width: 34em) {
+        @include make-col-offset(0);
+        @include make-col-span(12);
+      }
+    }
+  }
+}

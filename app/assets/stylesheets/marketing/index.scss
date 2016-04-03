@@ -2,10 +2,11 @@
   background-size: cover;
   background-position: center;
   background-image: asset-url("assets/marketing/index/backgrounds/Elegant_Background-24.jpg");
-  height: 110vh;
+  height: 100vh;
 
   & > div {
     background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
   }
 
   .hero-content {
