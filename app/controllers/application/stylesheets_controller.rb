@@ -24,6 +24,12 @@ class Application::StylesheetsController < AuthenticatedController
     @stylesheet = current_account.stylesheets.find(params[:id])
   end
 
+  def update
+    @stylesheet = current_account.stylesheets.find(params[:id])
+
+    @stylesheet.update(stylesheet_params)
+  end
+
   def show
     # id = 7-stylesheet-name.css
     @stylesheet = Stylesheet.find(params[:id])
@@ -45,6 +51,10 @@ class Application::StylesheetsController < AuthenticatedController
   def stylesheet_params
     params.
       require(:stylesheet).
-      permit(:framework, :name, :version)
+      permit(:framework,
+             :name,
+             :version,
+             variables_attributes: [:id, :name, :preview_value]
+            )
   end
 end

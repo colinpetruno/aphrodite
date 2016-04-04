@@ -1,3 +1,10 @@
-<div>
-  This is a stylesheet
+<div class="stylesheet">
+  <%= link_to edit_stylesheet_path(stylesheet) do %>
+    <h4><%= stylesheet.name %></h4>
+  <% end %>
+
+  <div>
+    <span class="oi oi-layers"></span>
+    <span class="help-message">Embed</span>
+  </div>
 </div>

@@ -1,2 +1,44 @@
-Edit Stylesheet<br>
-<%= @stylesheet.name %>
+<div class="container">
+  <%= simple_form_for(@stylesheet, remote: true) do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      Edit Stylesheet<br>
+
+      <%= f.input :name %>
+      <br>
+      <%= f.submit class: "btn btn-success" %>
+    </div>
+  </div>
+
+
+
+    <div class="row">
+      <div class="col-xs-4">
+
+
+        <% @stylesheet.variables.each do |variable| %>
+          <%= f.fields_for :variables, variable do |v| %>
+            <%= v.input :id, as: :hidden %>
+            <div class="row">
+              <div class="col-xs-6">
+                <% if variable.default? %>
+                  <%= variable.name %>
+                <% else %>
+                  <%= v.input :name, label: false %>
+                <% end %>
+              </div>
+              <div class="col-xs-6">
+                <%= v.input :preview_value, label: false, input_html: { class: "form-control-sm" } %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="col-xs-8">
+        <iframe src="http://localhost:3000/test_page.html?preview" style="width: 100%; min-height: 800px;">
+        </iframe>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,9 +1,10 @@
 .stylesheets {
   @include make-row();
+  margin: 3em 0;
 
   & > div {
     @include make-col();
-    @include make-col-span(4);
+    @include make-col-span(3);
   }
 }
 

@@ -18,6 +18,8 @@ Bundler.require(*Rails.groups)
 
 module CssManager
   class Application < Rails::Application
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
     config.to_prepare do
       Devise::SessionsController.layout "marketing"
     end

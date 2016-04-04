@@ -1,0 +1,49 @@
+.stylesheet {
+  text-align: center;
+
+  & > a {
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  div {
+    background-color: #555555;
+    color: #ffffff;
+    position: relative;
+
+    .help-message {
+      bottom: 0;
+      display: none;
+      left: 0;
+      line-height: 200px;
+      position: absolute;
+      right: 0;
+      vertical-align: center;
+      top: 0;
+    }
+
+    &:hover {
+      .help-message {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 40px;
+      }
+    }
+
+    .oi {
+      color: #aaaaaa;
+      cursor: pointer;
+      display: block;
+      font-size: 50px;
+      line-height: 200px;
+      margin: auto;
+      min-height: 200px;
+    }
+  }
+}
