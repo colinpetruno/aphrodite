@@ -1,0 +1,9 @@
+body.disable-scroll {
+  overflow-y: hidden;
+  padding-right: 15px;
+
+  .application-header {
+    margin-right: -15px;
+    padding-right: 31px;
+  }
+}

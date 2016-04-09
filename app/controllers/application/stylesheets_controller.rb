@@ -28,6 +28,7 @@ class Application::StylesheetsController < AuthenticatedController
     @stylesheet = current_account.stylesheets.find(params[:id])
 
     @stylesheet.update(stylesheet_params)
+    Resque.enqueue(BuildStylesheetJob, @stylesheet.id, true)
   end
 
   def show

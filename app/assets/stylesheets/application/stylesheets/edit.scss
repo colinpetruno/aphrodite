@@ -1,0 +1,19 @@
+.iphone-preview {
+  min-height: 896px;
+  max-width: 452px;
+  width: 452px;
+  background-image: asset-url("assets/application/stylesheets/edit/iphone_background_half.gif");
+
+  & > div {
+    width: 418px;
+    height: 785px;
+    padding: 110px 0 0 36px;
+    overflow: hidden;
+
+    iframe {
+      border: 0;
+      width: 419px;
+      height: 700px;
+    }
+  }
+}

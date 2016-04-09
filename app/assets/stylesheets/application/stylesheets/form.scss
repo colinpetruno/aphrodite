@@ -1,0 +1,25 @@
+.new_stylesheet {
+  input[type=submit] {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  select {
+    @extend .c-select;
+  }
+
+  & > div {
+    @include make-row();
+  }
+
+  & > div > div {
+    @include make-col();
+    @include make-col-offset(3);
+    @include make-col-span(6);
+
+    @media (max-width: 34em) {
+      @include make-col-offset(0);
+      @include make-col-span(12);
+    }
+  }
+}

@@ -6,4 +6,9 @@ $(function(){
       $("#stylesheet_version").empty();
     }
   });
+
+  $(document).on("scroll", "#preview-frame", function(e) {
+    console.log("scroll");
+    e.stopPropagation();
+  });
 });

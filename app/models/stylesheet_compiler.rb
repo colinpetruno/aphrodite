@@ -29,7 +29,7 @@ class StylesheetCompiler
   end
 
   def compile_stylesheet
-    system("sass #{source_file} #{destination_file}")
+    system("/Users/Colin/Projects/sassc/bin/sassc #{source_file} > #{destination_file}")
   end
 
   def root_file

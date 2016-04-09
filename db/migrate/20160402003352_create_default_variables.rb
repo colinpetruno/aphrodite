@@ -5,6 +5,7 @@ class CreateDefaultVariables < ActiveRecord::Migration[5.0]
       t.string :value
       t.string :framework
       t.string :version
+      t.integer :category_id
     end
   end
 end

@@ -1,43 +1,65 @@
 <div class="container">
   <%= simple_form_for(@stylesheet, remote: true) do |f| %>
-  <div class="row">
-    <div class="col-xs-12">
-      Edit Stylesheet<br>
+    <div class="row">
+      <div class="col-xs-12">
+        Edit Stylesheet<br>
 
-      <%= f.input :name %>
-      <br>
-      <%= f.submit class: "btn btn-success" %>
+        <%= f.input :name %>
+        <br>
+      </div>
     </div>
-  </div>
-
-
 
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-xs-12">
+        <div id="iframe-spinner" class="hidden-xs-up">
+          <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+          </div>
+        </div>
 
 
-        <% @stylesheet.variables.each do |variable| %>
-          <%= f.fields_for :variables, variable do |v| %>
-            <%= v.input :id, as: :hidden %>
-            <div class="row">
-              <div class="col-xs-6">
+        <div class="iphone-preview">
+          <div>
+            <iframe onmouseover="cssManager.disableBodyScroll()" onmouseout="cssManager.enableBodyScroll()" id="preview-iframe" class="embed-responsive-item" data-stylesheet-id="<%= @stylesheet.id %>" src="<%= Rails.application.config.root_url %>/jumbotron_example.html?preview-css=true&stylesheetId=<%= @stylesheet.id %>">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+
+        <select id="preview-iframe-select" class="c-select">
+          <option value="jumbotron">Jumbotron</option>
+          <option value="narrow_jumbotron">Narrow Jumbotron</option>
+          <option value="grid">Grid</option>
+          <option value="dashboard">Dashboard</option>
+        </select>
+
+        <%= f.submit class: "btn btn-success" %>
+
+        <br><br>
+
+        <div class="row">
+          <% @stylesheet.variables.each do |variable| %>
+            <div class="col-sm-4 col-md-3">
+              <%= f.fields_for :variables, variable do |v| %>
+                <%= v.input :id, as: :hidden %>
+
                 <% if variable.default? %>
                   <%= variable.name %>
                 <% else %>
                   <%= v.input :name, label: false %>
                 <% end %>
-              </div>
-              <div class="col-xs-6">
+
                 <%= v.input :preview_value, label: false, input_html: { class: "form-control-sm" } %>
-              </div>
+              <% end %>
             </div>
           <% end %>
-        <% end %>
-      </div>
-
-      <div class="col-xs-8">
-        <iframe src="http://localhost:3000/test_page.html?preview" style="width: 100%; min-height: 800px;">
-        </iframe>
+        </div>
       </div>
     </div>
   <% end %>

@@ -7,6 +7,7 @@ class CreateVariables < ActiveRecord::Migration[5.0]
       t.string :preview_value
       t.integer :position
       t.boolean :default
+      t.integer :category_id
 
       t.timestamps
     end

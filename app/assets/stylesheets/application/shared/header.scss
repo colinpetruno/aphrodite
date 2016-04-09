@@ -1,6 +1,8 @@
 .application-header {
   @extend .navbar;
   @extend .navbar-light;
+  background-color: #EE7437;
+  margin-bottom: $grid-gutter-width;
 
   & > div {
     @include pull-right();

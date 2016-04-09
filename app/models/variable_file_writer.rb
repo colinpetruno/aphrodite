@@ -23,7 +23,7 @@ class VariableFileWriter
   attr_reader :preview, :stylesheet
 
   def file_path
-    Rails.root.join("builds", stylesheet.id.to_s, version_path,"_custom.scss")
+    Rails.root.join("builds", stylesheet.id.to_s, version_path, "_custom_variables.scss")
   end
 
   def version_path
@@ -44,9 +44,14 @@ class VariableFileWriter
 
   def file_contents
     variables.map do |variable|
-      "#{variable.name}: #{variable.send(value_method)};"
+      "#{variable.name}: #{sanitized_variable(variable)};"
     end.
     join("\n")
+  end
+
+  def sanitized_variable(variable)
+    value = variable.send(value_method)
+    value.split("//").first
   end
 
   def variables

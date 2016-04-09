@@ -11,4 +11,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w(
   marketing.scss
   marketing.js
+  resque_web/lifebuoy.png
 )

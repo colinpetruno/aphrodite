@@ -1,8 +1,8 @@
+@import "application/variables";
 @import "bootstrap";
 @import "shared/**/*";
 @import "application/**/*";
 
-html, body {
-  background-color: #333;
-  color: #fff;
+iframe {
+  border: 1px solid $gray-dark;
 }

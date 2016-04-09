@@ -28,7 +28,8 @@ class StylesheetBuilder
           name: default_value.name,
           position: default_value.position,
           preview_value: default_value.value,
-          value: default_value.value
+          value: default_value.value,
+          category_id: default_value.category_id
         )
       end
 

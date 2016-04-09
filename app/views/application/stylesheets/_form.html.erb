@@ -1,7 +1,11 @@
 <%= simple_form_for @stylesheet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :framework, collection: Stylesheet.framework_select_options  %>
-  <%= f.input :version, collection: []  %>
+  <div>
+    <div>
+      <%= f.input :name %>
+      <%= f.input :framework, collection: Stylesheet.framework_select_options  %>
+      <%= f.input :version, collection: []  %>
 
-  <%= f.submit %>
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>

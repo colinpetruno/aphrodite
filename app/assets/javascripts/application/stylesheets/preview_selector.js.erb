@@ -1,0 +1,10 @@
+$(function(){
+  $("#preview-iframe-select").change(function(){
+    var $iframe = $("#preview-iframe");
+    var stylesheetId = $iframe.data("stylesheet-id");
+    var selectedPage = $(this).val();
+    var rootUrl = "<%= Rails.application.config.root_url %>";
+    var newUrl = rootUrl + "/" + selectedPage + "_example.html?preview-css=true&stylesheetId=" + stylesheetId;
+    $("#preview-iframe").attr("src", newUrl);
+  });
+});

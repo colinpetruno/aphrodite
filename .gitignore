@@ -9,10 +9,12 @@
 /builds/*
 
 # Ignore all logfiles and tempfiles.
+/doc/*
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/.sass-cache/*
 
 # Ignore Byebug command history file.
 .byebug_history
