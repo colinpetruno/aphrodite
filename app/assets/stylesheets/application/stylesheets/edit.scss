@@ -1,5 +1,6 @@
 .iphone-preview {
   min-height: 896px;
+  margin: auto;
   max-width: 452px;
   width: 452px;
   background-image: asset-url("assets/application/stylesheets/edit/iphone_background_half.gif");
@@ -12,7 +13,7 @@
 
     iframe {
       border: 0;
-      width: 419px;
+      width: 397px;
       height: 700px;
     }
   }
