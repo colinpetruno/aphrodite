@@ -4,6 +4,21 @@
   background-color: #EE7437;
   margin-bottom: $grid-gutter-width;
 
+  & > a {
+    color: #ffffff;
+    line-height: 35px;
+    font-size: 20px;
+    vertical-align: middle;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    img {
+      max-height: 35px;
+    }
+  }
+
   & > div {
     @include pull-right();
     @extend .nav;

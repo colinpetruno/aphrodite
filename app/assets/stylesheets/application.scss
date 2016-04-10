@@ -3,6 +3,11 @@
 @import "shared/**/*";
 @import "application/**/*";
 
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
 iframe {
   border: 1px solid $gray-dark;
 }

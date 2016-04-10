@@ -2,6 +2,22 @@
   @extend .navbar;
   @extend .navbar-light;
 
+  & > a {
+    color: #ffffff;
+    min-width: 200px;
+    @extend .navbar-brand;
+    vertical-align: middle;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    img {
+      display: inline;
+      max-height: 37px;
+    }
+  }
+
   & > div {
     @include pull-right();
     @extend .nav;

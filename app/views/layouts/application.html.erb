@@ -4,15 +4,20 @@
     <title>CssManager</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= render "shared/fonts" %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-    <%# javascript_include_tag 'cable' %>
   </head>
 
   <body>
     <%= render "application/shared/header" %>
 
     <%= yield %>
+
+
+    <%= javascript_include_tag 'cable' %>
   </body>
 </html>

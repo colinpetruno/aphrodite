@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  api:
+    slack:
+      help: | 
+        *Easily Manage and Preview Your Stylesheets*
+
+        `/aphrodite stylesheets/index` List All Stylesheets
+        `/aphrodite stylesheets/:id/export` Download your custom variable file 
+        `/aphrodite stylesheets/:id/variables` List Variables for a Specific Stylesheet
+        `/aphrodite stylesheets/:id/preview` Get a preview link to your styles 
+        `/aphrodite stylesheets/:id/publish` Make your stylesheet live (if permitted)
+        `/aphrodite variables/:id <new value>` Update a Variables Preview Value

@@ -12,4 +12,5 @@ Rails.application.config.assets.precompile += %w(
   marketing.scss
   marketing.js
   resque_web/lifebuoy.png
+  cable.js
 )

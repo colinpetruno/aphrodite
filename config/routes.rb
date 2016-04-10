@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    resource :slack, only: [:create]
+  end
+
   mount ResqueWeb::Engine => "/resque_web"
 
   devise_for :users

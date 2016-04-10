@@ -1,4 +1,4 @@
-App.stylesheet = App.cable.subscriptions.create "StylesheetChannel",
+App.stylesheet = App.cable.subscriptions.create { channel: "StylesheetChannel", stylesheet_id: $("#edit-stylesheet").data("stylesheet-id") },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -6,9 +6,6 @@ App.stylesheet = App.cable.subscriptions.create "StylesheetChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    console.log "Got data back"
-    console.log data
-
     document.getElementById('preview-iframe').contentWindow.location.reload()
     $("#iframe-spinner").addClass("hidden-xs-up")
     $("#preview-iframe").show()
