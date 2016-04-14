@@ -72,6 +72,7 @@ class SlackResponder
     variable = Variable.find(parsed_command[:id])
     old_value = variable.preview_value
     if variable.update(preview_value: value)
+      Resque.enqueue(BuildStylesheetJob, variable.stylesheet.id, true)
       { text: "*#{variable.id}* #{variable.name} updated from #{old_value} to #{variable.preview_value}" }
     else
       { text: "Ooops, we had an error updating your variable" }

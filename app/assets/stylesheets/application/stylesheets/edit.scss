@@ -1,9 +1,13 @@
-.iphone-preview {
+.mobile-preview {
   min-height: 896px;
   margin: auto;
   max-width: 452px;
   width: 452px;
   background-image: asset-url("assets/application/stylesheets/edit/iphone_background_half.gif");
+
+  .browser {
+    display: none;
+  }
 
   & > div {
     width: 418px;
@@ -16,5 +20,48 @@
       width: 397px;
       height: 700px;
     }
+  }
+}
+
+.desktop-preview {
+  & > div {
+    margin: 0 -15px;
+  }
+
+  .browser {
+    @include make-row();
+    background-image: asset-url("assets/application/stylesheets/edit/browser_middle.png");
+    background-repeat: repeat-x;
+    border-radius: 3px;
+
+    & > div {
+      @include make-col();
+      @include make-col-span(10);
+      background-image: asset-url("assets/application/stylesheets/edit/browser_left.png");
+      background-repeat: no-repeat;
+      min-height: 69px;
+    }
+
+    & > div:last-child {
+      @include make-col-span(2);
+      background-image: asset-url("assets/application/stylesheets/edit/browser_right.png");
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+  }
+
+  iframe {
+    border: 0;
+    min-height: 600px;
+    width: 100%;
+  }
+}
+
+.viewer-toggle {
+  @extend .btn-group;
+
+  button {
+    @extend .btn;
+    @extend .btn-secondary;
   }
 }

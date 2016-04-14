@@ -1,5 +1,5 @@
 $(function(){
-  $("#preview-iframe-select").change(function(){
+  $(document).on("change", "#preview-iframe-select", function(){
     var $iframe = $("#preview-iframe");
     var stylesheetId = $iframe.data("stylesheet-id");
     var selectedPage = $(this).val();

@@ -7,8 +7,8 @@ $(function(){
     }
   });
 
-  $(document).on("scroll", "#preview-frame", function(e) {
-    console.log("scroll");
-    e.stopPropagation();
+  $(document).on("click", ".viewer-toggle button", function(){
+    console.log("clicked");
+    $("#preview-window").removeClass().addClass($(this).data("viewport-type"));
   });
 });
