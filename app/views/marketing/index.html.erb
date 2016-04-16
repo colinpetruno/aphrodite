@@ -4,6 +4,11 @@
     <p>Let your designers take control of your site's look and not have to
       bother developers.</p>
 
-    <%= link_to "Get Started", new_registration_path, class: "btn btn-warning" %>
+    <% if Rails.env == "production" %>
+      <h6>Coming Soon!</h6>
+    <% else %>
+      <%= link_to "Get Started", new_registration_path, class: "btn btn-warning" %>
+    <% end %>
+
   </div>
 <% end %>

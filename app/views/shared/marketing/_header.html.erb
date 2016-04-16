@@ -12,6 +12,8 @@
     <a href="#">Features</a>
     <a href="#">Pricing</a>
     <a href="#">About</a>
-    <%= link_to "Login", new_user_session_path %>
+    <% if Rails.env != "production" %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
   </div>
 </nav>
