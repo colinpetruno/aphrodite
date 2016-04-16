@@ -3,7 +3,7 @@
   margin: auto;
   max-width: 452px;
   width: 452px;
-  background-image: asset-url("assets/application/stylesheets/edit/iphone_background_half.gif");
+  background-image: image-url("application/stylesheets/edit/iphone_background_half.gif");
 
   .browser {
     display: none;
@@ -30,21 +30,21 @@
 
   .browser {
     @include make-row();
-    background-image: asset-url("assets/application/stylesheets/edit/browser_middle.png");
+    background-image: image-url("application/stylesheets/edit/browser_middle.png");
     background-repeat: repeat-x;
     border-radius: 3px;
 
     & > div {
       @include make-col();
       @include make-col-span(10);
-      background-image: asset-url("assets/application/stylesheets/edit/browser_left.png");
+      background-image: image-url("application/stylesheets/edit/browser_left.png");
       background-repeat: no-repeat;
       min-height: 69px;
     }
 
     & > div:last-child {
       @include make-col-span(2);
-      background-image: asset-url("assets/application/stylesheets/edit/browser_right.png");
+      background-image: image-url("application/stylesheets/edit/browser_right.png");
       background-position: right;
       background-repeat: no-repeat;
     }
