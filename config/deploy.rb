@@ -24,13 +24,19 @@ set :pty, true
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push("log",
+                                               "app/builds",
+                                               "tmp/pids",
+                                               "tmp/cache",
+                                               "tmp/sockets",
+                                               "vendor/bundle",
+                                               "public/system")
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 set :keep_releases, 5
-set :bundle_gemfile, -> { release_path.join('Gemfile') }
+set :bundle_gemfile, -> { release_path.join("Gemfile") }
 set :use_sudo, false
 
 after "deploy:publishing", "passenger:restart"
