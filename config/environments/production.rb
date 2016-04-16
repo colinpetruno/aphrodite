@@ -84,5 +84,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.root_url = "http://96.126.118.71"
+  config.root_url = "https://www.aphroditecss.com"
 end
