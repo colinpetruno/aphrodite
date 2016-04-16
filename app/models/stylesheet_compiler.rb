@@ -29,7 +29,11 @@ class StylesheetCompiler
   end
 
   def compile_stylesheet
-    system("/Users/Colin/Projects/sassc/bin/sassc #{source_file} > #{destination_file}")
+    if Rails.env.production?
+      system("/usr/local/sassc/bin/sassc #{source_file} > #{destination_file}")
+    else
+      system("/Users/Colin/Projects/sassc/bin/sassc #{source_file} > #{destination_file}")
+    end
   end
 
   def root_file
