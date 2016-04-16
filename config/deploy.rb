@@ -34,8 +34,7 @@ set :bundle_gemfile, -> { release_path.join('Gemfile') }
 set :use_sudo, false
 
 after "deploy:publishing", "passenger:restart"
-# after "deploy:restart", "resque:restart"
-
+after "deploy:restart", "resque:restart"
 
 namespace :deploy do
 

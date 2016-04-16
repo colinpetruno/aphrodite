@@ -25,6 +25,7 @@ group :development do
   gem "capistrano", "~> 3.1"
   gem "capistrano-passenger"
   gem "capistrano-rails", "~> 1.1"
+  gem "capistrano-resque", "~> 0.2.2", require: false
   gem "capistrano-rvm"
   gem "listen", "~> 3.0.5"
   gem "spring"
