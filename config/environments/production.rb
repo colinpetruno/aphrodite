@@ -41,8 +41,10 @@ Rails.application.configure do
   # Action Cable endpoint configuration
   config.action_cable.url = 'wss://stream.aphroditecss.com/cable'
   config.action_cable.allowed_request_origins = [
-    'https://stream.aphroditecss.com',
-    /https:\/\/stream.aphroditecss.*/,
+    'https://aphroditecss.com',
+    'https://www.aphroditecss.com',
+    /https:\/\/aphroditecss.*/,
+    /https:\/\/www.aphroditecss.*/
   ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
