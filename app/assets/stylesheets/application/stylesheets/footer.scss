@@ -1,0 +1,35 @@
+.stylesheet-footer {
+  @extend .bg-faded;
+  @extend .form-inline;
+  @extend .navbar;
+  @extend .navbar-fixed-bottom;
+  @extend .navbar-light;
+
+  input[type=submit] {
+    @extend .btn;
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  }
+
+  > div {
+    @include make-row();
+
+    div {
+      @include make-col();
+      @include make-col-span(4);
+
+      &:first-child {
+        @include make-col-span(5);
+      }
+
+      &:last-child {
+        @include make-col-span(3);
+      }
+    }
+  }
+}
+
+.disable-scroll {
+  .stylesheet-footer {
+    padding-right: 31px;
+  }
+}

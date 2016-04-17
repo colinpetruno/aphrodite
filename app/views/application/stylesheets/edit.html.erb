@@ -28,95 +28,52 @@
 
   <br><br>
 
-
-
-    <div class="row">
-      <div class="col-xs-12">
-        <br><br>
-
-
-
-        <div id="accordion" role="tablist" aria-multiselectable="true">
-
-
-          <% @stylesheet.variables.group_by(&:category).each_pair do |category, variables| %>
-
-
-
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading-<%= category.id %>">
-                <div class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= category.id %>" aria-expanded="false" aria-controls="collapse-<%= category.id %>">
-                    <%= category.name %>
-                  </a>
-                </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <br><br>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+        <% @stylesheet.variables.group_by(&:category).each_pair do |category, variables| %>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading-<%= category.id %>">
+              <div class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= category.id %>" aria-expanded="false" aria-controls="collapse-<%= category.id %>">
+                  <%= category.name %>
+                </a>
               </div>
+            </div>
 
-              <div id="collapse-<%= category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-<%= category.id %>">
-                <div class="row">
+            <div id="collapse-<%= category.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-<%= category.id %>">
+              <div class="row">
+                <% variables.each do |variable| %>
+                  <div class="col-sm-4 col-md-3">
 
-                  <% variables.each do |variable| %>
-                    <div class="col-sm-4 col-md-3">
+                    <%= f.fields_for :variables, variable do |v| %>
+                      <%= v.input :id, as: :hidden %>
 
-                      <%= f.fields_for :variables, variable do |v| %>
-                        <%= v.input :id, as: :hidden %>
-
-                        <% if variable.default? %>
-                          <%= variable.name %>
-                        <% else %>
-                          <%= v.input :name, label: false %>
-                        <% end %>
-
-                        <%= v.input :preview_value, label: false, input_html: { class: "form-control-sm" } %>
+                      <% if variable.default? %>
+                        <%= variable.name %>
+                      <% else %>
+                        <%= v.input :name, label: false %>
                       <% end %>
 
-                    </div>
-                  <% end %>
-                </div>
+                      <%= v.input :preview_value, label: false, input_html: { class: "form-control-sm" } %>
+                    <% end %>
+
+                  </div>
+                <% end %>
               </div>
-
-            <% end %>
-
+            </div>
           </div>
-        </div>
-
-
+        <% end %>
       </div>
-    </div>
-</div>
-
-
-
-<div class="navbar navbar-fixed-bottom navbar-light bg-faded">
-  <div class="row">
-    <div class="col-xs-5">
-      <select id="preview-iframe-select" class="c-select">
-        <option value="jumbotron">Jumbotron</option>
-        <option value="narrow_jumbotron">Narrow Jumbotron</option>
-        <option value="grid">Grid</option>
-        <option value="dashboard">Dashboard</option>
-      </select>
-
-      <div class="viewer-toggle" role="group" aria-label="Viewport Toggle">
-        <button type="button" data-viewport-type="mobile-preview">
-          <span class="oi oi-phone"></span>
-        </button>
-        <button type="button" data-viewport-type="desktop-preview">
-          <span class="oi oi-browser"></span>
-        </button>
-      </div>
-    </div>
-
-
-    <div class="col-xs-4">
-      <%= f.input :name, label: false %>
-    </div>
-
-    <div class="col-xs-3">
-      <%= f.submit class: "btn btn-success" %>
     </div>
   </div>
 </div>
+
+
+
+
+<%= render partial: "application/stylesheets/footer", locals: { f: f } %>
 
 
 <% end %>

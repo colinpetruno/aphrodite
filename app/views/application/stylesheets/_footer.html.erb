@@ -1,0 +1,30 @@
+<div class="stylesheet-footer">
+  <div>
+    <div>
+      <select id="preview-iframe-select" class="c-select">
+        <option value="jumbotron">Jumbotron</option>
+        <option value="narrow_jumbotron">Narrow Jumbotron</option>
+        <option value="grid">Grid</option>
+        <option value="dashboard">Dashboard</option>
+      </select>
+
+      <div class="viewer-toggle" role="group" aria-label="Viewport Toggle">
+        <button type="button" data-viewport-type="mobile-preview">
+          <span class="oi oi-phone"></span>
+        </button>
+        <button type="button" data-viewport-type="desktop-preview">
+          <span class="oi oi-browser"></span>
+        </button>
+      </div>
+    </div>
+
+
+    <div>
+      <%= f.input :name, label: false %>
+    </div>
+
+    <div>
+      <%= f.submit %>
+    </div>
+  </div>
+</div>
