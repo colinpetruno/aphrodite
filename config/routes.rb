@@ -4,10 +4,16 @@ Rails.application.routes.draw do
 
   root "marketing#index"
 
+  get '/auth/:provider/callback', to: 'sessions#create'
+
   resources :registrations, only: [:new, :create]
 
   scope module: "application" do
     resources :stylesheets, only: [:create, :edit, :index, :new, :show, :update] do
+      member do
+        post :publish
+      end
+
       resources :versions, only: [:index]
     end
   end

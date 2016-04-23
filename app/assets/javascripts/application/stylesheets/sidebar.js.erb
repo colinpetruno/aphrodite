@@ -1,0 +1,9 @@
+$(function(){
+  $(document).on("click", ".sidebar-toggle", function(event){
+    event.stopPropagation();
+    event.preventDefault();
+
+    $(this).toggleClass("is-open");
+    $(".sidebar").toggleClass("is-visible");
+  });
+});

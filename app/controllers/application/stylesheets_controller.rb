@@ -47,6 +47,10 @@ class Application::StylesheetsController < AuthenticatedController
     end
   end
 
+  def publish
+    @stylesheet = current_account.stylesheets.find(params[:id])
+  end
+
   private
 
   def stylesheet_params

@@ -18,13 +18,16 @@
       </div>
     </div>
 
-
     <div>
-      <%= f.input :name, label: false %>
+      <%= simple_form_for([:publish, @stylesheet]) do |f| %>
+        <%= f.submit "Publish" %>
+      <% end %>
     </div>
 
     <div>
-      <%= f.submit %>
+      <button class="btn btn-secondary sidebar-toggle">
+        <span class="oi oi-menu"></span>
+      </button>
     </div>
   </div>
 </div>

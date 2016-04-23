@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409140040) do
+ActiveRecord::Schema.define(version: 20160419031318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160409140040) do
     t.integer "category_id"
     t.integer "position",    null: false
   end
+
+  create_table "slack_authentications", force: :cascade do |t|
+    t.integer  "account_id"
+    t.string   "token"
+    t.string   "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "slack_authentications", ["account_id"], name: "index_slack_authentications_on_account_id", using: :btree
 
   create_table "stylesheets", force: :cascade do |t|
     t.string   "name"

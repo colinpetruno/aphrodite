@@ -1,0 +1,48 @@
+/*.edit_stylesheet {*/
+  /*margin-top: -$grid-gutter-width;*/
+  /*padding-top: $grid-gutter-width;*/
+  /*height: 101vh;*/
+/*}*/
+
+.sidebar {
+  @include position(fixed, 0 0 3.35rem auto);
+  @include transform(translateX(400px));
+
+  @include transition-property(transform);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease-in);
+
+  width: 400px;
+  height: 100%;
+
+  background-color: #575761;
+
+  section.variables {
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+
+  footer {
+    padding-top: 15px;
+
+    input[type=submit] {
+      @extend .btn;
+      @extend .btn-block;
+
+      @include button-variant(
+        $btn-success-color,
+        $btn-success-bg,
+        $btn-success-border
+      );
+    }
+  }
+}
+
+.disable-scroll .sidebar {
+  // width: 415px;
+}

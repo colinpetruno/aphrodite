@@ -1,6 +1,7 @@
 class SlackResponder
-  def initialize(input)
+  def initialize(input, team_id)
     @input = input
+    @team_id = team_id
   end
 
   def as_json(_options={})
@@ -9,16 +10,24 @@ class SlackResponder
 
   protected
 
-  attr_reader :input
+  attr_reader :input, :team_id
 
   private
+
+  def account
+    begin
+      SlackAuthentication.find_by!(team_id: team_id).account
+    rescue ActiveRecord::RecordNotFound
+      Account.new
+    end
+  end
 
   def parsed_command
     @_parsed_command ||= SlackCommandParser.new(command).parse
   end
 
   def variables
-    stylesheet = Stylesheet.find(parsed_command[:id])
+    stylesheet = account.stylesheets.find(parsed_command[:id])
 
     if value.present?
       matching_variables = stylesheet.
@@ -53,7 +62,7 @@ class SlackResponder
   end
 
   def preview
-    stylesheet = Stylesheet.find(parsed_command[:id])
+    stylesheet = account.stylesheets.find(parsed_command[:id])
 
     {
       text: "#{stylesheet.account.site_url}?preview-css=true&amp;stylesheetId=#{stylesheet.id}"
@@ -69,8 +78,9 @@ class SlackResponder
   end
 
   def update_variable
-    variable = Variable.find(parsed_command[:id])
+    variable = account.variables.find(parsed_command[:id])
     old_value = variable.preview_value
+
     if variable.update(preview_value: value)
       Resque.enqueue(BuildStylesheetJob, variable.stylesheet.id, true)
       { text: "*#{variable.id}* #{variable.name} updated from #{old_value} to #{variable.preview_value}" }
@@ -88,6 +98,12 @@ class SlackResponder
   end
 
   def value
-    input.split(" ").last
+    split_input = input.split(" ")
+
+    if split_input.length > 1
+      split_input.last
+    else
+      nil
+    end
   end
 end

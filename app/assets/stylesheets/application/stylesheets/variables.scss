@@ -1,0 +1,20 @@
+section.variables {
+  .panel-heading {
+    background-color: #37b067;
+    border-bottom: 1px solid #47e284;
+  }
+
+  .panel-title a {
+    color: #ffffff;
+    display: block;
+    padding: 5px 15px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .panel-collapse {
+    background-color: #ffffff;
+  }
+}
