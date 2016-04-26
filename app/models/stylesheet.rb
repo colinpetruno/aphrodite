@@ -1,6 +1,6 @@
 class Stylesheet < ApplicationRecord
   VERSIONS = {
-    bootstrap: %w(4-alpha-2)
+    bootstrap: %w(4-alpha-2 3.3)
   }
 
   belongs_to :account, inverse_of: :stylesheets

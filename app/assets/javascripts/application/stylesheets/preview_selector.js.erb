@@ -4,7 +4,21 @@ $(function(){
     var stylesheetId = $iframe.data("stylesheet-id");
     var selectedPage = $(this).val();
     var rootUrl = "<%= Rails.application.config.root_url %>";
-    var newUrl = rootUrl + "/" + selectedPage + "_example.html?preview-css=true&stylesheetId=" + stylesheetId;
+    var framework = $(this).data("framework");
+    var version = $(this).data("version");
+    var newUrl =
+      rootUrl +
+      "/" +
+      selectedPage +
+      "_" +
+      framework +
+      "_" +
+      version +
+      "_example.html?preview-css=true&stylesheetId=" +
+      stylesheetId;
+
+    console.log("new url is " + newUrl);
+
     $("#preview-iframe").attr("src", newUrl);
   });
 });
