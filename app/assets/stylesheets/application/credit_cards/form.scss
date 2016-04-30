@@ -1,0 +1,41 @@
+.credit-card-form {
+  @include make-row();
+
+  & > div {
+    @include make-col();
+    @include make-col-offset(3);
+    @include make-col-span(6);
+    padding-bottom: 40px;
+
+    background-color: #fff;
+    box-shadow: 0 0 8px #ddd;
+  }
+
+  input[type=submit] {
+    @extend .btn;
+    @extend .btn-success;
+  }
+
+  section {
+    @include make-row();
+
+    & > div {
+      @include make-col();
+      @include make-col-span(4);
+    }
+  }
+
+  .card-preview {
+    @include make-row();
+    @include padding(40px 20px 40px 20px);
+    color: #fff;
+    margin-bottom: 40px;
+
+    & > div {
+      @include make-col();
+      @include make-col-span(12);
+      text-align: center;
+    }
+    background-color: #565758;
+  }
+}

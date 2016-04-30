@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <%= simple_form_for @account do |f| %>
+        <%= f.input :site_url %>
+        <%= f.input :slack_publishing, as: :boolean %>
+
+        <%= f.submit %>
+      <% end %>
+
+      <br>
+      <br>
+
+      <%= link_to "Billing", account_credit_card_path %>
+    </div>
+  </div>
+</div>

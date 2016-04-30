@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require tether
 //= require turbolinks
+//= require vendor/card
 //= require_tree ./application
 
 

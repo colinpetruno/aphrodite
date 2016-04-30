@@ -1,0 +1,38 @@
+<div class="pricing-plan">
+  <div>
+    <div class="plan-name">
+      <strong><%= pricing_plan.name %></strong> Plan
+    </div>
+
+    <div class="plan-price">
+      <span>$</span><%= pricing_plan.price_in_dollars %>
+      <div><strong>/</strong> month</div>
+    </div>
+
+    <article>
+      <section>
+        <strong>
+          <%= pricing_plan.number_of_users || "Unlimited" %>
+        </strong> <%= "user".pluralize(pricing_plan.number_of_users) %>
+      </section>
+
+      <section>
+        <strong><%= pricing_plan.number_of_requests %></strong> Requests<br>
+      </section>
+
+      <% if pricing_plan.slack_integration? %>
+        <section>
+          <strong>Slack</strong> Integration<br>
+        </section>
+      <% end %>
+    </article>
+
+    <% if controller_name.include?("marketing") %>
+      <%= link_to(
+        "Try For Free",
+        new_registration_path(pricing_plan_id: pricing_plan.id))%>
+    <% else %>
+      <button>Select</button>
+    <% end %>
+  </div>
+</div>

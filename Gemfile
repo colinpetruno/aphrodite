@@ -17,6 +17,7 @@ gem "resque", "~>1.26.0"
 gem "resque-web", require: "resque_web"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
+gem "stripe"
 gem "turbolinks", "~> 5.x"
 gem "uglifier", ">= 1.3.0"
 

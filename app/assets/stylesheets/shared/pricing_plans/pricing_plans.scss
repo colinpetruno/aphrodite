@@ -1,0 +1,14 @@
+.pricing-plans {
+  @include make-row();
+  @include margin(3em null 3em null);
+
+  & > div {
+    @include make-col();
+    @include make-col-span(10);
+    @include make-col-offset(1);
+  }
+
+  & > div > div {
+    @include make-row();
+  }
+}

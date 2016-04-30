@@ -1,0 +1,20 @@
+<%= render layout: "layouts/container" do %>
+
+  <div class="text-xs-center">
+    <h2>You're on the <%= current_account.pricing_plan.name %> plan</h2>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="alert alert-success text-xs-center">
+        Your account is active and being billed monthly<br>
+        <%= link_to "Update Credit Card", edit_account_credit_card_path %>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: "pricing_plans/pricing_plans" %>
+
+<% end %>

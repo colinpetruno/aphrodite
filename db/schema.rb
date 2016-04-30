@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419031318) do
+ActiveRecord::Schema.define(version: 20160430145628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,31 @@ ActiveRecord::Schema.define(version: 20160419031318) do
   create_table "accounts", force: :cascade do |t|
     t.string   "name"
     t.string   "site_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "slack_publishing", default: false, null: false
+    t.string   "stripe_id"
+    t.integer  "pricing_plan_id",  default: 1,     null: false
   end
+
+  add_index "accounts", ["pricing_plan_id"], name: "index_accounts_on_pricing_plan_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
   end
+
+  create_table "credit_cards", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "account_id"
+    t.string   "last_4"
+    t.string   "token"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "stripe_id"
+  end
+
+  add_index "credit_cards", ["account_id"], name: "index_credit_cards_on_account_id", using: :btree
 
   create_table "default_variables", force: :cascade do |t|
     t.string  "name"
@@ -34,6 +52,17 @@ ActiveRecord::Schema.define(version: 20160419031318) do
     t.string  "version"
     t.integer "category_id"
     t.integer "position",    null: false
+  end
+
+  create_table "pricing_plans", force: :cascade do |t|
+    t.string   "name",                               null: false
+    t.integer  "price",                              null: false
+    t.integer  "number_of_users"
+    t.integer  "number_of_requests"
+    t.boolean  "slack_integration",  default: false, null: false
+    t.integer  "position"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "slack_authentications", force: :cascade do |t|
@@ -91,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160419031318) do
 
   add_index "variables", ["stylesheet_id"], name: "index_variables_on_stylesheet_id", using: :btree
 
+  add_foreign_key "accounts", "pricing_plans"
   add_foreign_key "stylesheets", "accounts"
   add_foreign_key "users", "accounts"
 end

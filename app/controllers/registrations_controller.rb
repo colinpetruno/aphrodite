@@ -1,6 +1,6 @@
 class RegistrationsController < MarketingController
   def new
-    @registration = Registration.new
+    @registration = Registration.new(pricing_plan_id: pricing_plan_id)
   end
 
   def create
@@ -15,6 +15,10 @@ class RegistrationsController < MarketingController
 
   private
 
+  def pricing_plan_id
+    params[:pricing_plan_id] || PricingPlan.all.order(:price).first.id
+  end
+
   def registration_params
     params.
       require(:registration).
@@ -23,6 +27,7 @@ class RegistrationsController < MarketingController
         :email,
         :password,
         :password_confirmation,
+        :pricing_plan_id,
         :site_url
       )
   end

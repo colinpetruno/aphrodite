@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :registrations, only: [:new, :create]
 
   scope module: "application" do
+    resource :account, only: [:edit, :update] do
+      resource :credit_card, path: :billing, except: [:index]
+    end
+
     resources :stylesheets, only: [:create, :edit, :index, :new, :show, :update] do
       member do
         post :publish

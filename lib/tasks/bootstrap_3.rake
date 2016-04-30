@@ -1,13 +1,11 @@
 namespace :bootstrap_3  do
   desc "Seed Data For Bootstrap 3"
   task :seed => :environment do
-#    Category.find_or_create_by([
-      #{ id: 33, name: "Tabs" },
-      #{ id: 34, name: "Pills" },
-      #{ id: 35, name: "Panels" },
-      #{ id: 36, name: "Wells" },
-      #{ id: 37, name: "Badges" }
-    #])
+    Category.find_or_create_by({ id: 33, name: "Tabs" })
+    Category.find_or_create_by({ id: 34, name: "Pills" })
+    Category.find_or_create_by({ id: 35, name: "Panels" })
+    Category.find_or_create_by({ id: 36, name: "Wells" })
+    Category.find_or_create_by({ id: 37, name: "Badges" })
 
     DefaultVariable.where(version: "3.3").delete_all
     DefaultVariable.create([
