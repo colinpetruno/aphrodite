@@ -1,0 +1,19 @@
+.users-header {
+  @include make-row();
+
+  margin-bottom: 50px;
+
+  & > div {
+    @include make-col();
+    @include make-col-span(6);
+
+    &:last-child {
+      @extend .text-xs-right;
+    }
+  }
+
+  a {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+}

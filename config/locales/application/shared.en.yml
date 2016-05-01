@@ -1,0 +1,7 @@
+en:
+  application:
+    shared:
+      account_sidebar:
+        account: "Account"
+        billing: "Billing"
+        team_members: "Team Members"

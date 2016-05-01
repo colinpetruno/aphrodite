@@ -1,7 +1,7 @@
 .application-header {
   @extend .navbar;
   @extend .navbar-light;
-  background-color: #EE7437;
+  background-color: $brand-primary;
   margin-bottom: $grid-gutter-width;
 
   & > a {
@@ -29,6 +29,6 @@
     @extend .nav-item;
     @extend .nav-link;
 
-    color: #feffe7;
+    color: #fff;
   }
 }

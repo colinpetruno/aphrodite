@@ -1,5 +1,5 @@
 .pricing-plan {
-  @include make-col($gutter: 50px);
+  @include make-col();
   @include make-col-span(4);
 
 

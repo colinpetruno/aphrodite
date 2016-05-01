@@ -1,14 +1,14 @@
-<%= render layout: "layouts/container" do %>
-  <%= simple_form_for @account do |f| %>
-    <%= f.input :site_url %>
-    <%= f.input :slack_publishing, as: :boolean %>
+<%= render layout: "layouts/account_settings" do %>
+  <div>
+    <h3>Account Settings</h3>
+  </div>
 
-    <%= f.submit %>
-  <% end %>
+  <div>
+    <%= simple_form_for @account do |f| %>
+      <%= f.input :site_url %>
+      <%= f.input :slack_publishing, as: :boolean %>
 
-  <br>
-  <br>
-
-  <%= link_to "Billing", account_credit_card_path %><br>
-  <%= link_to "Team Members", account_users_path %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 <% end %>

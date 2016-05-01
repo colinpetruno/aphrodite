@@ -1,0 +1,17 @@
+<%= render layout: "layouts/container" do %>
+  <div class="account-settings">
+    <div>
+      <div>
+        <%= render partial: "application/shared/account_sidebar" %>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render partial: "application/shared/footer" %>

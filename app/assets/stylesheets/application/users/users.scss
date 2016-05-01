@@ -1,0 +1,25 @@
+.users {
+  @extend .table;
+
+  tr {
+    td:last-child {
+      @extend .text-xs-right;
+    }
+  }
+
+  form {
+    display: inline;
+  }
+
+  a {
+    @extend .btn;
+    @extend .btn-secondary;
+    @extend .btn-sm;
+  }
+
+  input[type="submit"] {
+    @extend .btn;
+    @extend .btn-danger;
+    @extend .btn-sm;
+  }
+}

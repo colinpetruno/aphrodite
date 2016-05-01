@@ -1,0 +1,22 @@
+<div class="account-sidebar">
+  <ul>
+    <li>
+      <%= link_to t(".account"),
+        edit_account_path,
+        class: "#{'active' if controller_name.include?('account')}"
+      %>
+    </li>
+    <li>
+      <%= link_to t(".billing"),
+        account_credit_card_path,
+        class: "#{'active' if controller_name.include?('credit')}"
+      %>
+    </li>
+    <li>
+      <%= link_to t(".team_members"),
+        account_users_path,
+        class: "#{'active' if controller_name.include?('users')}"
+      %>
+    </li>
+  </ul>
+</div>

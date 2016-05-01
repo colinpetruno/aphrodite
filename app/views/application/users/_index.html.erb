@@ -1,11 +1,15 @@
-<div class="row">
-  <div class="col-sm-6">
-    <h3><%= t(".header") %></h3>
+<div class="users-header">
+  <div>
+    <div>
+      <h3><%= t(".header") %></h3>
+    </div>
   </div>
 
-  <div class="col-sm-6">
-    <%= link_to t(".add_member"), new_account_user_path %>
+  <div>
+    <div>
+      <%= link_to t(".add_member"), new_account_user_path %>
+    </div>
   </div>
-<div>
+</div>
 
 <%= render partial: "users", locals: { users: @users } %>

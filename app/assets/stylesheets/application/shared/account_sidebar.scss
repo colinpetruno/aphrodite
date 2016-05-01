@@ -1,0 +1,15 @@
+.account-sidebar {
+  ul {
+    @extend .nav;
+    @extend .nav-pills;
+    @extend .nav-stacked;
+  }
+
+  ul > li {
+    @extend .nav-item;
+  }
+
+  ul > li > a {
+    @extend .nav-link;
+  }
+}

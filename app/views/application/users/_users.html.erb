@@ -1,9 +1,11 @@
-<table>
-  <th>
-    <td><%= t(".team_member") %></td>
-    <td><%= t(".role") %></td>
-    <td></td>
-  </th>
+<table class="users">
+  <thead>
+    <tr>
+      <th><%= t(".team_member") %></th>
+      <th><%= t(".role") %></th>
+      <th></th>
+    </tr>
+  </thead>
 
   <%= render partial: "user", collection: users %>
 </table>
