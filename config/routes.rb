@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   scope module: "application" do
     resource :account, only: [:edit, :update] do
       resource :credit_card, path: :billing, except: [:index]
+      resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
     end
 
     resources :stylesheets, only: [:create, :edit, :index, :new, :show, :update] do

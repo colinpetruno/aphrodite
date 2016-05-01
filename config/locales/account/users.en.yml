@@ -1,0 +1,17 @@
+en:
+  application:
+    users:
+      index:
+        header: "Team Members"
+        add_member: "Add Team Member"
+      user:
+        buttons:
+          details: "Details"
+          remove: "Remove"
+        roles:
+          member: "Member"
+          owner: "Owner"
+          publisher: "Publisher"
+      users:
+        team_member: "Team Member"
+        role: "Role"

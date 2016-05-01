@@ -1,0 +1,8 @@
+<%= simple_form_for [:account, @user] do |f| %>
+  <%= f.input :email, readonly: @user.persisted? %>
+  <%= f.input :role, as: :radio_buttons, collection: User.roles.keys %>
+
+
+  <%= link_to t(".back"), account_users_path %>
+  <%= f.submit %>
+<% end %>

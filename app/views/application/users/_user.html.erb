@@ -1,0 +1,15 @@
+<tr>
+  <td><%= user.email %></td>
+
+  <td><%= t(".roles.#{user.role}") %></td>
+
+  <td>
+    <% if current_user.owner? %>
+      <%= link_to t(".buttons.details"), edit_account_user_path(user) %>
+
+      <%= simple_form_for [:account, user], method: :delete do |f| %>
+        <%= f.submit t(".buttons.remove") %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>
