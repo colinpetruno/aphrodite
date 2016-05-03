@@ -1,0 +1,18 @@
+.slack {
+  @include make-container();
+
+  & > div {
+    @include make-row();
+  }
+
+  & > div > div {
+    @include make-col();
+    @include make-col-span(6);
+
+    min-height: 350px;
+
+    &:last-child {
+      background-image: image-url("marketing/index/slack.jpg");
+    }
+  }
+}

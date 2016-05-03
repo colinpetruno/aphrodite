@@ -13,6 +13,10 @@
   </div>
 <% end %>
 
+<% if Rails.env != "production" %>
+  <%= render partial: "slack" %>
+<% end %>
+
 <div>
   <%= render partial: "pricing_plans/pricing_plans" %>
 </div>
