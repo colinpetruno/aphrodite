@@ -1,0 +1,5 @@
+--ignore-dir=doc
+--ignore-dir=tmp
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=dev

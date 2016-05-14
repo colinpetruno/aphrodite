@@ -1,15 +1,11 @@
 @import "bourbon";
 @import "application/variables";
 @import "bootstrap";
-@import "shared/**/*";
-@import "layouts/**/*";
-@import "application/**/*";
 
-html, body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}
+@import "shared/components/**/*";
+@import "shared/views/**/*";
 
-iframe {
-  border: 1px solid $gray-dark;
-}
+@import "application/base/**/*";
+@import "application/components/**/*";
+// @import "application/patterns/**/*";
+@import "application/views/**/*";

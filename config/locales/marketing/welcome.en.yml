@@ -1,0 +1,21 @@
+en:
+  marketing:
+    welcome:
+      build:
+        title: Build
+        description: >
+          Create your own customized bootstrap stylesheets without
+          having to edit any Less or Sass. No need for complicated build
+          pipelines or compilers.
+      preview:
+        title: Preview Stylesheets in Real Time
+        description: >
+          See your stylesheet updated in real time. This is not 'just' a
+          preview. This is your real compiled stylesheet exactly as it will
+          appear on your site.
+      slack:
+        title: Manage your stylesheets from Slack
+        description: >
+          Your team doesn't need another login to manage. Using slack anyone
+          on your team can modify and test your stylesheets. You can even
+          publish directly from slack.
