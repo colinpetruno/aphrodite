@@ -8,11 +8,10 @@
 
   <div>
     <%= link_to "Home", root_path %>
-    <%#<a class="active" href="#">Home <span class="sr-only">(current)</span></a>%>
     <a href="#">Features</a>
     <a href="#">Pricing</a>
     <a href="#">About</a>
-    <% if Rails.env != "production" %>
+    <% if Rails.env != "production" || params[:preview] == true %>
       <%= link_to "Login", new_user_session_path %>
     <% end %>
   </div>

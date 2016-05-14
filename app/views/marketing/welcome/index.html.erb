@@ -13,12 +13,16 @@
   </div>
 <% end %>
 
-<% if Rails.env != "production" %>
+<% if Rails.env != "production" || params[:preview] == true %>
   <%= render partial: "build" %>
   <%= render partial: "preview" %>
   <%= render partial: "slack" %>
+
+  <div>
+    <%= render partial: "pricing_plans/pricing_plans" %>
+  </div>
+
+  <%= render partial: "marketing/shared/footer" %>
 <% end %>
 
-<div>
-  <%= render partial: "pricing_plans/pricing_plans" %>
-</div>
+

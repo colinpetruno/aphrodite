@@ -1,0 +1,25 @@
+<footer>
+  <div>
+    <section>
+      <div>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><a href="#">Features</a><li>
+          <li><a href="#">Pricing</a><li>
+          <li><a href="#">About</a></li>
+          <li>
+            <% if Rails.env != "production" || params[:preview] == true %>
+              <%= link_to "Login", new_user_session_path %>
+            <% end %>
+          <li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        Beautiful Stylesheets - Crafted with ❤ in Boston.
+      </div>
+    </section>
+  </div>
+</footer>
