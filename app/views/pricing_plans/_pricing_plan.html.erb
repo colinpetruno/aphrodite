@@ -1,38 +1,53 @@
 <div class="pricing-plan">
   <div>
     <div class="plan-name">
-      <strong><%= pricing_plan.name %></strong> Plan
+      <%= t(".names.#{pricing_plan.name.downcase}_html") %>
     </div>
 
     <div class="plan-price">
       <span>$</span><%= pricing_plan.price_in_dollars %>
-      <div><strong>/</strong> month</div>
+      <div><strong>/</strong> <%= t(".month") %></div>
     </div>
 
     <article>
       <section>
         <strong>
-          <%= pricing_plan.number_of_users || "Unlimited" %>
+          <%= pricing_plan.number_of_users || t(".unlimited") %>
         </strong> <%= "user".pluralize(pricing_plan.number_of_users) %>
       </section>
 
       <section>
-        <strong><%= pricing_plan.number_of_requests %></strong> Requests<br>
+        <strong>
+          <%= pricing_plan.number_of_requests %>
+        </strong>
+        <%= t(".requests") %><br>
       </section>
 
       <% if pricing_plan.slack_integration? %>
         <section>
-          <strong>Slack</strong> Integration<br>
+          <%= t(".slack_integration_html") %>
         </section>
       <% end %>
     </article>
 
     <% if controller_name.include?("marketing") %>
       <%= link_to(
-        "Try For Free",
+        t(".try_for_free"),
         new_registration_path(pricing_plan_id: pricing_plan.id))%>
     <% else %>
-      <button>Select</button>
+
+      <% if current_account.pricing_plan == pricing_plan %>
+        <span class="selected-plan">Selected</span>
+      <% else %>
+        <%= simple_form_for current_account do |f| %>
+          <%= f.input :pricing_plan_id,
+            as: :hidden,
+            wrapper: false,
+            input_html: { value: pricing_plan.id } %>
+          <%= f.submit t(".save") %>
+        <% end %>
+      <% end %>
+
     <% end %>
   </div>
 </div>

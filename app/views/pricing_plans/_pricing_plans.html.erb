@@ -1,9 +1,11 @@
-<div class="pricing-plans">
+<section class="pricing-plans">
   <div>
-    <div>
-      <% PricingPlan.all.order(:price).map do |pricing_plan| %>
-        <%= render partial: "pricing_plans/pricing_plan", object: pricing_plan %>
-      <% end %>
-    </div>
+    <article>
+      <div>
+        <% PricingPlan.all.order(:price).map do |pricing_plan| %>
+          <%= render partial: "pricing_plans/pricing_plan", object: pricing_plan %>
+        <% end %>
+      </div>
+    </article>
   </div>
-</div>
+</section>

@@ -5,11 +5,11 @@
 
   & > div {
     background-color: #ffffff;
-
     box-shadow: 0 0 8px #ddd;
     border: 1px solid #ccc;
     color: #656566;
     font-weight: 200;
+    min-height: 495px;
     padding: 50px 0;
     text-align: center;
   }
@@ -46,7 +46,12 @@
     margin: 10px 0;
   }
 
-  a,button {
+  span.selected-plan {
+    @extend .btn;
+    font-weight: 200;
+  }
+
+  a,button,input[type=submit] {
     @extend .btn;
     @extend .btn-primary;
   }

@@ -1,0 +1,13 @@
+en:
+  pricing_plans:
+    pricing_plan:
+      save: "Select Plan"
+      slack_integration_html: <strong>Slack</strong> Integration<br>
+      try_for_free: "Try For Free"
+      requests: "Requests"
+      unlimited: "Unlimited"
+      month: "month"
+      names:
+        personal_html: <strong>Individual</strong> Plan
+        business_html: <strong>Business</strong> Plan
+        enterprise_html: <strong>Enterprise</strong> Plan

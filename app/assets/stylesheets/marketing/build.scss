@@ -1,4 +1,4 @@
-.slack {
+section.build {
   & > div {
     @include make-container();
     max-width: 1280px;
@@ -21,11 +21,11 @@
       &:last-child {
         @include make-col-span(6);
         @include make-col-offset(0);
-
-        background-image: image-url("marketing/index/slack.png");
-        background-position: center;
-        background-repeat: no-repeat;
         background-size: contain;
+        background-position: left;
+        background-image: image-url("marketing/index/build.gif");
+        background-repeat: no-repeat;
+        min-height: 400px;
       }
     }
   }

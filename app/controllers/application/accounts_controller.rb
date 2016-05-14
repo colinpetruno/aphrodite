@@ -5,7 +5,7 @@ class Application::AccountsController < AuthenticatedController
 
   def update
     if current_account.update(account_params)
-      redirect_to edit_account_path
+      redirect_to redirect_path
     else
       render :edit
     end
@@ -13,7 +13,17 @@ class Application::AccountsController < AuthenticatedController
 
   private
 
+  def redirect_path
+    if account_params[:pricing_plan_id].present?
+      account_credit_card_path
+    else
+      edit_account_path
+    end
+  end
+
   def account_params
-    params.require(:account).permit(:site_url, :slack_publishing)
+    params.
+      require(:account).
+      permit(:site_url, :slack_publishing, :pricing_plan_id)
   end
 end

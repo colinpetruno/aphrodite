@@ -1,0 +1,10 @@
+.edit_account {
+  input[type=submit] {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  .boolean {
+    margin-right: .3rem;
+  }
+}
