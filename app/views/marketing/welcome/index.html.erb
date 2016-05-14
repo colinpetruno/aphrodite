@@ -13,7 +13,7 @@
   </div>
 <% end %>
 
-<% if Rails.env != "production" || params[:preview] == true %>
+<% if Rails.env != "production" || params[:preview] == "true" %>
   <%= render partial: "build" %>
   <%= render partial: "preview" %>
   <%= render partial: "slack" %>
