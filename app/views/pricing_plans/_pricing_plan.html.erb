@@ -33,7 +33,7 @@
     <% if controller_name.include?("welcome") %>
       <%= link_to(
         t(".try_for_free"),
-        new_registration_path(pricing_plan_id: pricing_plan.id))%>
+        new_registration_path(pricing_plan_id: pricing_plan.id)) %>
     <% else %>
 
       <% if current_account.pricing_plan == pricing_plan %>
