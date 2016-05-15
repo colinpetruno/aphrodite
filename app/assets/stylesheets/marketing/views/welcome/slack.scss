@@ -9,23 +9,41 @@
 
     & > div {
       @include make-col();
-      @include make-col-span(5);
-      @include make-col-offset(1);
+    }
+
+    & > div:first-child {
+      @include make-col-span(6);
+      @include make-col-push(6);
+
+      background-image: image-url("marketing/index/slack.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
 
       min-height: 350px;
 
-      &:first-child {
-        padding-top: 3em;
+      @include media-breakpoint-down(sm) {
+        @include make-col-push(0);
+        @include make-col-span(12);
+        min-height: 250px;
       }
+    }
 
-      &:last-child {
-        @include make-col-span(6);
+    & > div:last-child {
+      @include make-col-offset(1);
+      @include make-col-pull(6);
+      @include make-col-span(5);
+
+      padding-top: 3em;
+
+      @include media-breakpoint-down(sm) {
         @include make-col-offset(0);
+        @include make-col-pull(0);
+        @include make-col-span(12);
 
-        background-image: image-url("marketing/index/slack.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
+        padding-bottom: 1em;
+        padding-top: 1em;
+        text-align: center;
       }
     }
   }

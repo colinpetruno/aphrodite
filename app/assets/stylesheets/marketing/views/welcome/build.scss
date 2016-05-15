@@ -9,23 +9,50 @@ section.build {
 
     & > div {
       @include make-col();
-      @include make-col-span(5);
-      @include make-col-offset(1);
+      @include make-col-span(6);
 
       min-height: 350px;
 
-      &:first-child {
-        padding-top: 3em;
-      }
+      @include media-breakpoint-down(sm) {
+        @include make-col-span(12);
 
-      &:last-child {
-        @include make-col-span(6);
         @include make-col-offset(0);
-        background-size: contain;
-        background-position: left;
-        background-image: image-url("marketing/index/build.gif");
-        background-repeat: no-repeat;
-        min-height: 400px;
+
+        min-height: 100px;
+        text-align: center;
+      }
+    }
+
+    & > div:first-child {
+      background-image: image-url("marketing/index/build.gif");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include make-col-push(6);
+
+      @include media-breakpoint-down(sm) {
+        @include make-col-push(0);
+        background-position: center;
+
+        min-height: 200px;
+      }
+    }
+
+    & > div:last-child {
+      @include make-col-span(5);
+      @include make-col-offset(1);
+      @include make-col-pull(6);
+
+      padding-top: 3em;
+
+      @include media-breakpoint-down(sm) {
+        @include make-col-offset(0);
+        @include make-col-span(12);
+        @include make-col-pull(0);
+
+        padding-bottom: 1em;
+        padding-top: 1em;
       }
     }
   }

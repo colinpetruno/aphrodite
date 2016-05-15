@@ -2,6 +2,11 @@
   @include make-col();
   @include make-col-span(4);
 
+  @include media-breakpoint-down(sm) {
+    @include make-col-span(12);
+    margin-bottom: 2em;
+  }
+
 
   & > div {
     background-color: #ffffff;

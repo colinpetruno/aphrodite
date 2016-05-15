@@ -6,7 +6,6 @@
     @include margin(3em null 3em null);
   }
 
-
   article {
     @include make-col();
     @include make-col-span(10);
