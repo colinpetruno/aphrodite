@@ -1,13 +1,8 @@
 <div class="centered-container">
   <div>
     <div>
-      <div class="stylesheets">
-        <%= render @stylesheets %>
-      </div>
-
-      <div class="create-stylesheet">
-        <%= link_to "New Stylesheet", new_stylesheet_path %>
-      </div>
+      <%= render partial: "stylesheets",
+                 locals: { stylesheets: @stylesheets } %>
 
       <br>
       <br>

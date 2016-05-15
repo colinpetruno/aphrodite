@@ -1,10 +1,10 @@
-<div class="stylesheet">
+<tr>
+  <td>
   <%= link_to edit_stylesheet_path(stylesheet) do %>
-    <h4><%= stylesheet.name %></h4>
+    <%= stylesheet.name %>
   <% end %>
-
-  <div>
-    <span class="oi oi-layers"></span>
-    <span class="help-message">Embed</span>
-  </div>
-</div>
+  </td>
+  <td>
+    Embed
+  </td>
+</tr>

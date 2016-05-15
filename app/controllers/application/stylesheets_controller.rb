@@ -2,7 +2,7 @@ class Application::StylesheetsController < AuthenticatedController
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
-    @stylesheets = current_account.stylesheets
+    @stylesheets = current_account.stylesheets.order(:name)
   end
 
   def new

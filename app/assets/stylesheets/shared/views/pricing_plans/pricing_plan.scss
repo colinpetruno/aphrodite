@@ -9,9 +9,7 @@
 
 
   & > div {
-    background-color: #ffffff;
-    box-shadow: 0 0 8px #ddd;
-    border: 1px solid #ccc;
+    @include emphasized-box($white);
     color: #656566;
     font-weight: 200;
     min-height: 495px;
