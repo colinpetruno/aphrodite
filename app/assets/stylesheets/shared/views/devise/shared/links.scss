@@ -1,0 +1,12 @@
+.signup-links {
+  @include make-row();
+
+  margin-top: 2em;
+
+  & > div {
+    @include make-col();
+    @include make-col-span(12);
+
+    @extend .text-xs-center;
+  }
+}
