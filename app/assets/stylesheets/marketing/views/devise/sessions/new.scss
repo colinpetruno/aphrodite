@@ -1,0 +1,22 @@
+.login-form {
+  @include make-container();
+
+  margin-top: 3em;
+
+  & > div {
+    @include make-row();
+  }
+
+  & > div > div {
+    @include make-col();
+    @include make-col-offset(4);
+    @include make-col-span(4);
+    @include emphasized-box($white);
+
+    @include padding(3em null);
+  }
+
+  header, footer {
+    @extend .text-xs-center;
+  }
+}

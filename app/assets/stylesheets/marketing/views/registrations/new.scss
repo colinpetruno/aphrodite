@@ -1,7 +1,18 @@
-.new-registration {
-  @include make-container();
+.registration-form {
+  @include make-row();
+  margin-top: 3em;
 
   & > div {
-    @include make-row();
+    @include emphasized-box($white);
+    @include make-col();
+    @include make-col-offset(3);
+    @include make-col-span(6);
+
+    padding-bottom: 2em;
+    padding-top: 2em;
+
+    header, footer {
+      @extend .text-xs-center;
+    }
   }
 }
