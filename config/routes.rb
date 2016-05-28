@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     resource :slack, only: [:create]
   end
 
+  namespace :embed do
+    resource :stylesheet, only: [:show], defaults: { format: :js }
+  end
+
   mount ResqueWeb::Engine => "/resque_web"
 
   devise_for :users
