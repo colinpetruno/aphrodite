@@ -8,8 +8,8 @@
 
   <div>
     <%= link_to "Home", root_path %>
-    <a href="#">Features</a>
-    <a href="#">Pricing</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
     <a href="#">About</a>
     <% if Rails.env != "production" || params[:preview] == "true" %>
       <%= link_to "Login", new_user_session_path %>

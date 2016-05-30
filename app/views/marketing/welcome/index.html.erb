@@ -14,11 +14,13 @@
 <% end %>
 
 <% if Rails.env != "production" || params[:preview] == "true" %>
+  <a name="features"></a>
   <%= render partial: "build" %>
   <%= render partial: "preview" %>
   <%= render partial: "slack" %>
 
   <div>
+    <a name="pricing"></a>
     <%= render partial: "pricing_plans/pricing_plans" %>
   </div>
 

@@ -19,7 +19,7 @@
     </div>
 
     <div>
-      <%= simple_form_for([:publish, @stylesheet]) do |f| %>
+      <%= simple_form_for([:publish, @stylesheet], method: :post) do |f| %>
         <%= f.submit "Publish" %>
       <% end %>
     </div>

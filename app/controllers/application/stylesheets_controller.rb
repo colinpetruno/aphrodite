@@ -49,6 +49,14 @@ class Application::StylesheetsController < AuthenticatedController
 
   def publish
     @stylesheet = current_account.stylesheets.find(params[:id])
+
+    publisher = StylesheetPublisher.for(@stylesheet)
+
+    if publisher.publish
+      redirect_to edit_stylesheet_path(@stylesheet)
+    else
+
+    end
   end
 
   private
