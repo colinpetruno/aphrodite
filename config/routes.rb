@@ -19,6 +19,8 @@ Rails.application.routes.draw do
         post :publish
       end
 
+      resource :embed, only: [:show]
+
       resources :versions, only: [:index]
     end
   end

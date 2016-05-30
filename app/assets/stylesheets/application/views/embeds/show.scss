@@ -1,0 +1,7 @@
+.embeds-show {
+  @include emphasized-box($white);
+  @extend .centered-container;
+
+  margin-bottom: 30px;
+  padding: 15px;
+}

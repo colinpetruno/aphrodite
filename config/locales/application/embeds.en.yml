@@ -1,0 +1,23 @@
+en:
+  application:
+    embeds:
+      show:
+        stylesheet:
+          header: "Include the Stylesheet"
+          instructions: > 
+            Adding the stylesheet is the minimum required to get up and 
+            running. This will add the published version of your stylesheet to 
+            your page but provides no ability to preview your styles as you 
+            make changes.
+        javascript:
+          header: "Include the Javascript Utility"
+          instructions: >
+            Add the ability to preview your stylesheets with the javascript 
+            utility. Place this at the end of your document. We keep it very 
+            small so it has no impact on your sites performance.
+        example:
+          full:
+            header: "Full Example"
+            head_content: "Your current head content"
+            body_content: "Your current body content"
+        go_back: "Back to Stylesheets"

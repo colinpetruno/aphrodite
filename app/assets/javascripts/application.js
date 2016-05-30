@@ -4,6 +4,7 @@
 //= require tether
 //= require turbolinks
 //= require vendor/card
+//= require prism
 //= require_tree ./application
 
 

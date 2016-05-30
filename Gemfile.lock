@@ -179,6 +179,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0.beta3)
       sprockets-rails (>= 2.0.0)
+    rails-assets-prism (1.5.0)
     rails-assets-tether (1.2.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -305,6 +306,7 @@ DEPENDENCIES
   pry-remote
   puma
   rails (>= 5.0.0.beta3, < 5.1)
+  rails-assets-prism!
   rails-assets-tether (>= 1.1.0)!
   resque (~> 1.26.0)
   resque-web

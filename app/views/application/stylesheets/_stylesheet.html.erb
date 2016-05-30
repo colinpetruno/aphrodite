@@ -5,7 +5,7 @@
   <% end %>
   </td>
   <td>
-    Embed
+    <%= link_to "Embed", stylesheet_embed_path(stylesheet) %>
   </td>
   <td>
     <%= link_to_if(current_account.site_url.present?, "Preview", current_account.site_url + "?aphrodite=true&aphrodite-id=#{stylesheet.id}" ) do %>
