@@ -59,6 +59,26 @@ class SlackResponder
   end
 
   def publish
+    if account.slack_publishing?
+      publish_stylesheet
+    else
+      { text: "Sorry, Slack Publishing is disabled for your account" }
+    end
+  end
+
+  def publish_stylesheet
+    stylesheet = account.stylesheets.find(parsed_command[:id])
+    publisher = StylesheetPublisher.for(stylesheet)
+
+    if publisher.publish
+      {
+        text: "Your stylesheet has been published"
+      }
+    else
+      {
+        text: "Sorry, we encountered an error publishing your stylesheet."
+      }
+    end
   end
 
   def preview
