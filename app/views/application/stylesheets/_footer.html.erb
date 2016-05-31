@@ -12,7 +12,7 @@
         <button type="button" data-viewport-type="mobile-preview">
           <span class="oi oi-phone"></span>
         </button>
-        <button type="button" data-viewport-type="desktop-preview">
+        <button type="button" class="selected" data-viewport-type="desktop-preview">
           <span class="oi oi-browser"></span>
         </button>
       </div>
@@ -20,7 +20,7 @@
 
     <div>
       <%= simple_form_for([:publish, @stylesheet], method: :post) do |f| %>
-        <%= f.submit "Publish" %>
+        <%= f.submit "Publish", data: { confirm: "This will make all changes live. Are you sure you want to continue?" } %>
       <% end %>
     </div>
 

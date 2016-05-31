@@ -8,7 +8,8 @@ $(function(){
   });
 
   $(document).on("click", ".viewer-toggle button", function(){
-    console.log("clicked");
     $("#preview-window").removeClass().addClass($(this).data("viewport-type"));
+    $(this).parent().find("button").removeClass("selected");
+    $(this).addClass("selected");
   });
 });
