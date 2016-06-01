@@ -1,0 +1,12 @@
+form {
+  // fix bootstrap bug with checkbox/radio spacing
+  .checkbox label, .radio label{
+    display: inline;
+    font-weight: 200;
+
+    input.boolean, input.radio_buttons {
+      display: inline-block;
+      position: absolute;
+    }
+  }
+}

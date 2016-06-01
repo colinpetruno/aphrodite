@@ -1,7 +1,13 @@
 en:
   application:
     shared:
-      account_sidebar:
+      navbar_links: &navbar_links
         account: "Account"
         billing: "Billing"
+        logout: "Logout"
+        stylesheets: "Stylesheets"
         team_members: "Team Members"
+      account_sidebar:
+        <<: *navbar_links
+      header:
+        <<: *navbar_links

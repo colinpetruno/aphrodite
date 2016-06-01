@@ -4,6 +4,9 @@ en:
       credit_card:
         create: "Save"
         update: "Save"
+      user:
+        create: "Create User"
+        update: "Save"
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -19,6 +22,9 @@ en:
         exp_month: "Expires Month"
         exp_year: "Expires Year"
         cvc: "CVC Code"
+      user:
+        email: "Email"
+        role: "Role"
 
 # Examples
 # labels:
