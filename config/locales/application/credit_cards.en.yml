@@ -1,0 +1,4 @@
+application:
+  credit_cards:
+    form:
+      save: "Save"

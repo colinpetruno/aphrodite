@@ -5,7 +5,6 @@
       <div></div>
     </div>
 
-
     <%= simple_form_for StripeCreditCardMock.new,
           url: "#",
           html: {
@@ -40,7 +39,7 @@
 
     <%= simple_form_for @credit_card, url: account_credit_card_path do |f| %>
       <%= f.input :token, as: :hidden %>
-      <%= f.submit "Save", class: "btn-block" %>
+      <%= f.submit class: "btn-block" %>
     <% end %>
   </div>
 </div>

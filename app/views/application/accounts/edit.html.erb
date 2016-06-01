@@ -1,14 +1,9 @@
 <%= render layout: "layouts/account_settings" do %>
   <div>
-    <h3>Account Settings</h3>
+    <h3><%= t("application.accounts.edit.header") %></h3>
   </div>
 
   <div>
-    <%= simple_form_for @account do |f| %>
-      <%= f.input :site_url %>
-      <%= f.input :slack_publishing, as: :boolean %>
-
-      <%= f.submit %>
-    <% end %>
+    <%= render partial: "form", locals: { account: @account } %>
   </div>
 <% end %>

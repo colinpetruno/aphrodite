@@ -1,5 +1,18 @@
 en:
   marketing:
+    nav_links: &nav_links
+      about: "About"
+      home: "Home"
+      features: "Features"
+      login: "Login"
+      pricing: "Pricing"
+    shared:
+      footer:
+        <<: *nav_links
+        crafted_in_boston: "Beautiful Stylesheets - Crafted with ❤ in Boston."
+      header:
+        <<: *nav_links
+        home: "Home"
     welcome:
       build:
         title: Build

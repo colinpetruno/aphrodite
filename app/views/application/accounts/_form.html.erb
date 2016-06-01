@@ -1,0 +1,6 @@
+<%= simple_form_for account do |f| %>
+  <%= f.input :site_url %>
+  <%= f.input :slack_publishing, as: :boolean %>
+
+  <%= f.submit t(".submit") %>
+<% end %>

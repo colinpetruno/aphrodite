@@ -1,0 +1,7 @@
+en:
+  application:
+    accounts:
+      edit:
+        header: "Account Settings"
+      form:
+        submit: "Save Settings"

@@ -3,4 +3,15 @@ form {
     @extend .btn;
     @extend .btn-primary;
   }
+
+  // fix bootstrap bug with checkbox label spacing
+  .checkbox label{
+    display: inline;
+    font-weight: 200;
+
+    input.boolean {
+      display: inline-block;
+      position: absolute;
+    }
+  }
 }
