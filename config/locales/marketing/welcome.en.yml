@@ -16,6 +16,6 @@ en:
       slack:
         title: Manage your stylesheets from Slack
         description: >
-          Your team doesn't need another login to manage. Using slack anyone
-          on your team can modify and test your stylesheets. You can even
-          publish directly from slack.
+          Your team doesn't need another login to manage Aphrodite. With Slack, 
+          anyone on your team can modify and test your stylesheets. You can 
+          even publish directly from Slack.
