@@ -1,0 +1,96 @@
+<%# Remember to update the minified production version %>
+
+(function(){
+
+  var toolbarContent = "<div id=aphrodite-container><style>#aphrodite-panel{background-color:#39da9f;bottom:0;color:#fff;height:60px;position:fixed;width:100%}#aphrodite-panel img{margin:15px;max-height:30px}#aphrodite-panel div{float:left;width:80%}#aphrodite-panel div:last-child{text-align:right;width:20%}#aphrodite-disable{background-color:#ff4428;border:1px solid transparent!important;border-image:none;box-shadow:none;color:#fff;font-size:16px;padding:3px 8px;margin:12px 15px;outline:0;text-shadow:none}#aphrodite-disable:active,#aphrodite-disable:hover{background-color:#f42000;color:#fff}</style><div id=aphrodite-panel><div><img src=/assets/logos/swan_white_text-3e2448900c98debe5b681d75b9247a9b4e398c8b7c5c54466367962bc6211e13.gif> <span id=aphrodite-message>This is a preview of your stylesheet</span></div><div><button id=aphrodite-disable onclick=window.Aphrodite.remove()>Disable</button></div></div></div>";
+
+  window.Aphrodite = {
+    rootUrl: "<%= "#{request.protocol}#{request.host_with_port}" %>/stylesheets/",
+
+    getParameterByName: function (name) {
+      var url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    },
+
+    getCookieValue: function(key) {
+      var name = "Aphrodite" + key + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length,c.length);
+          }
+      }
+      return "";
+    },
+
+    setCookieValue: function (key, value) {
+      document.cookie = "Aphrodite" + key + "=" + value + ";";
+    },
+
+    displayAphrodite: function() {
+      return (Aphrodite.getParameterByName("aphrodite") || Aphrodite.getCookieValue("PreviewCss"));
+    },
+
+    attachPanel: function() {
+      var div = document.createElement('div');
+      div.setAttribute("id", "aphrodite-container");
+      div.innerHTML = toolbarContent;
+      window.document.body.appendChild(div);
+    },
+
+    remove: function() {
+      var container = document.getElementById("aphrodite-container");
+      container.parentNode.removeChild(container);
+      this.styleTag().href = this.oldStylesheetLink;
+      document.cookie = "AphroditePreviewCss=false; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+      document.cookie = "AphroditeCookieId=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    },
+
+    stylesheetId: function() {
+      return (this.getParameterByName("aphrodite-id") || this.getCookieValue("CookieId"));
+    },
+
+    styleTag: function() {
+      var tag = document.getElementById("AphroditeStylesheet");
+
+      if(!tag) {
+        alert("Aphrodite Could not find your stylesheet element. Please check " +
+              "out the documentation");
+
+        return null;
+      }
+
+      return tag;
+    },
+
+    loadStylesheet: function() {
+      if(parseInt(this.stylesheetId()) > 0 && this.styleTag()){
+        this.setCookieValue("CookieId", this.stylesheetId());
+        var newUrl = this.rootUrl + parseInt(this.stylesheetId()) + ".css?preview=true"
+        this.oldStylesheetLink = this.styleTag().href;
+        this.styleTag().href = newUrl;
+      }
+    },
+
+    init: function() {
+      if(this.displayAphrodite()) {
+        this.setCookieValue("PreviewCss");
+        this.attachPanel();
+        this.loadStylesheet();
+      }
+    }
+  };
+
+  window.onload = function() {
+    Aphrodite.init();
+  };
+})();
