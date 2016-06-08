@@ -23,18 +23,18 @@ default: &default
 
 development:
   <<: *default
-  database: css-manager_development
+  database: aphrodite_development
   username: dev
   password: development
 
 test:
   <<: *default
-  database: css-manager_test
+  database: aphrodite_test
   username: dev
   password: development
 
 production:
   <<: *default
-  database: css-manager
+  database: aphrodite 
   username: <%= ENV['SQL_USER'] %>
   password: <%= ENV['SQL_PASSWORD'] %>
