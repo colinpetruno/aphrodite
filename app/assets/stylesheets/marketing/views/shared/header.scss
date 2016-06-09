@@ -65,7 +65,9 @@
     }
 
     .menu-links > div > a {
+      color: $white;
       display: block;
+      font-weight: 300;
       margin-bottom: 15px;
       margin-top: 15px;
     }
