@@ -19,4 +19,11 @@
   header, footer {
     @extend .text-xs-center;
   }
+
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    & > div > div {
+      @include make-col-offset(1);
+      @include make-col-span(10);
+    }
+  }
 }
