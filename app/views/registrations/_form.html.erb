@@ -7,6 +7,11 @@
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
 
+  <%= f.input :pricing_plan_id,
+    as: :select,
+    collection: PricingPlan.all,
+    label_method: :label %>
+
   <footer>
     <%= f.button :submit, class: "btn" %>
   </footer>

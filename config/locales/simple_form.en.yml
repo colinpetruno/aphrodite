@@ -4,6 +4,8 @@ en:
       credit_card:
         create: "Save"
         update: "Save"
+      registration:
+        create: "Sign Up For Free"
       user:
         create: "Create User"
         update: "Save"
@@ -13,9 +15,17 @@ en:
     required:
       text: 'required'
       mark: '*'
+      html: '*'
     error_notification:
       default_message: "Please review the problems below:"
     labels:
+      registration:
+        account_name: "Company"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm Password"
+        pricing_plan_id: "Plan"
+        site_url: "Website Url"
       stripe_credit_card_mock:
         name: "Card Holder Name"
         card_number: "Card Number"

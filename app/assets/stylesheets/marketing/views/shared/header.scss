@@ -3,7 +3,7 @@
   @extend .navbar-light;
 
   & > a {
-    color: #ffffff;
+    color: $white;
     min-width: 200px;
     @extend .navbar-brand;
     vertical-align: middle;
@@ -18,16 +18,62 @@
     }
   }
 
-  & > div {
-    @include pull-right();
+  .toggle {
+    display: none;
+
+    @include hover-focus {
+      outline: none;
+    }
+  }
+
+  .menu-links {
     @extend .nav;
     @extend .navbar-nav;
   }
 
-  & > div > a {
-    @extend .nav-item;
+  .menu-links.collapse {
+    display: block;
+  }
+
+  .menu-links > div {
+    text-align: right;
+  }
+
+  .menu-links > div > a {
+    // @extend .nav-item;
     @extend .nav-link;
+    display: inline-block;
+
+    padding-bottom: .425em;
+    padding-top: .425em;
 
     color: #feffe7;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    & > div.menu-links.collapse {
+      display: none;
+    }
+
+    & > div.menu-links.collapse.in {
+      display: block;
+    }
+
+    .menu-links {
+      padding-top: 10px;
+      text-align: right;
+    }
+
+    .menu-links > div > a {
+      display: block;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .toggle {
+      color: #feffe7;
+      display: block;
+      text-align: right;
+    }
   }
 }

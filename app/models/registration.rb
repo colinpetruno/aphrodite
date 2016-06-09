@@ -1,11 +1,19 @@
 class Registration
   include ActiveModel::Model
 
-  attr_accessor :account_name, :email, :password, :password_confirmation,
-    :pricing_plan_id, :site_url
+  attr_accessor :account_name,
+                :email,
+                :password,
+                :password_confirmation,
+                :pricing_plan_id,
+                :site_url
 
-  validates :account_name, :email, :password, :password_confirmation,
-    presence: true
+  validates :account_name,
+            :email,
+            :password,
+            :password_confirmation,
+            :pricing_plan_id,
+            presence: true
 
   def register
     return false unless valid?

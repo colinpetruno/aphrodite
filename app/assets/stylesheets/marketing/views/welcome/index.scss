@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   background-image: image-url("marketing/index/backgrounds/Elegant_Background-24-sm.jpg");
-  height: 100vh;
+  min-height: 100vh;
 
   & > div {
     background-color: rgba(0, 0, 0, 0.3);

@@ -2,6 +2,10 @@
   @include make-row();
   margin-top: 3em;
 
+  label {
+    font-size: .85em;
+  }
+
   & > div {
     @include emphasized-box($white);
     @include make-col();
@@ -13,6 +17,13 @@
 
     header, footer {
       @extend .text-xs-center;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    & > div {
+      @include make-col-offset(0);
+      @include make-col-span(12);
     }
   }
 }
