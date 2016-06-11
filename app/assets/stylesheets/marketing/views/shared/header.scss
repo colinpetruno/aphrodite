@@ -5,18 +5,17 @@
 
   & > a {
     @extend .navbar-brand;
-
+    @include retina-image(logos/swan_off_white_text, 168px 37px);
+    background-repeat: none;
     color: $white;
-    min-width: 200px;
+    curser: pointer;
+    display: block;
+    min-width: 168px;
+    min-height: 37px;
     padding: 0;
 
     &:hover {
       text-decoration: none;
-    }
-
-    img {
-      display: inline;
-      max-height: 37px;
     }
   }
 
