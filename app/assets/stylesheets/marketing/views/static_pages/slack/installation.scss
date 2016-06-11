@@ -1,4 +1,8 @@
 .slack-installation {
   @include padding(2rem null 2rem null);
   text-align: center;
+
+  img {
+    max-width: 100%;
+  }
 }
