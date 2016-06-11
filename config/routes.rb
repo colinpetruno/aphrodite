@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   root "marketing/welcome#index"
 
+  scope module: "marketing" do
+    get "/how-it-works" => "static_pages#how_it_works"
+    get "/slack" => "static_pages#slack"
+  end
+
   get '/auth/:provider/callback', to: 'sessions#create'
 
   resources :registrations, only: [:new, :create]
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
       resource :credit_card, path: :billing, except: [:index]
       resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
     end
+
 
     resources :stylesheets, only: [:create, :edit, :index, :new, :show, :update] do
       member do

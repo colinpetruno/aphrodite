@@ -1,4 +1,4 @@
-<div class="hero-section">
+<div class="hero-section <%= "short" if controller_name.include?("static_pages") %>">
   <div>
     <%= render "marketing/shared/header" %>
 

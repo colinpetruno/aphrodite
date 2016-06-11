@@ -6,8 +6,17 @@
 
   & > div {
     background-color: rgba(0, 0, 0, 0.3);
-    height: 100vh;
+    min-height: 100vh;
   }
+
+  &.short {
+    min-height: 80vh;
+
+    & > div {
+      min-height: 80vh;
+    }
+  }
+
 
   .hero-content {
     color: #feffe7;

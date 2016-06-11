@@ -1,0 +1,30 @@
+en:
+  marketing:
+    static_pages:
+      slack:
+        installation:
+          installation: "Installation"
+          visit_account_settings: "Visit Your Account Settings"
+          add_to_slack: 'Click the "Add to Slack" button.'
+          authorize: "Authorize Aphrodite and enjoy!"
+        usage:
+          how_to_use: "How To Use Aphrodite with Slack"
+          commands: "Commands"
+          list_all:
+            title: "List All Stylesheets"
+            code: "/aphrodite stylesheets/index"
+          export:
+            title: "Download Your Custom Variable File"
+            code: "/aphrodite stylesheets/:id/export"
+          list_variables:
+            title: "List Variables for a Specific Stylesheet"
+            code: "/aphrodite stylesheets/:id/variables <search-term>"
+          preview_link:
+            title: "Get a Preview Link to Your Styles"
+            code: "/aphrodite stylesheets/:id/preview"
+          publish:
+            title: "Make Your Stylesheet Live"
+            code: "/aphrodite stylesheets/:id/publish"
+          update_variable:
+            title: "Update a Variables Preview Value"
+            code: "/aphrodite variables/:id <new-value>"

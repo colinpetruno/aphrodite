@@ -1,11 +1,20 @@
-$brand-primary: #ff4428;
-$enable-rounded: false;
-$headings-font-weight: 200;
+
 
 // Colors
 
 $white: #ffffff;
+$off-white: #fefefe;
+$yellow-text: #feffe7;
 
+$background-blue: #e3edfa;
+
+
+// Bootstrap Overrides
+$brand-primary: #ff4428;
+$brand-info: darken($background-blue, 20%);
+
+$enable-rounded: false;
+$headings-font-weight: 200;
 
 $navbar-light-active-color: #ff0000;
 $navbar-light-hover-color: darken(#feffe7, 15%);

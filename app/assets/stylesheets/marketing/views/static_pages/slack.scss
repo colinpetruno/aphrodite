@@ -1,0 +1,24 @@
+.slack-info {
+  color: #feffe7;
+  font-weight: bold;
+  padding-bottom: 10vh;
+  margin-top: 10vh;
+  text-align: center;
+
+  h1 {
+    font-size: 4em;
+  }
+
+  img {
+    max-height: 30vh;
+  }
+
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    img {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}

@@ -11,6 +11,11 @@
       @include make-col();
     }
 
+    & > div > a {
+      @extend .btn;
+      @extend .btn-info;
+    }
+
     & > div:first-child {
       @include make-col-span(6);
       @include make-col-push(6);
