@@ -20,12 +20,14 @@ en:
           Create your own customized bootstrap stylesheets without
           having to edit any Less or Sass. No need for complicated build
           pipelines or compilers.
+        how_it_works: "How It Works"
       preview:
         title: Preview Stylesheets in Real Time
         description: >
           See your stylesheet updated in real time. This is not 'just' a
           preview. This is your real compiled stylesheet exactly as it will
           appear on your site.
+        how_it_works: "How It Works"
       slack:
         title: Manage your stylesheets from Slack
         description: >
