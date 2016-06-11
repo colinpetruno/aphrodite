@@ -1,1 +1,59 @@
-how it works
+<%= render "marketing/shared/hero_block" do %>
+  <div class="how-it-works">
+    <h1><%= t("marketing.static_pages.how_it_works.title") %></h1>
+    <p><%= t("marketing.static_pages.how_it_works.description") %></p>
+  </div>
+<% end %>
+
+<div class="how-it-works-info">
+  <section class="usage">
+    <article>
+      <div>
+        <h3><%= t(".usage.title") %></h3>
+
+        <%= t(".usage.step_1") %><br>
+        <%= image_tag("marketing/how_it_works/create.jpg") %><br><br>
+
+        <%= t(".usage.step_2") %><br>
+        <%= image_tag("marketing/how_it_works/customize.jpg") %><br><br>
+
+        <%= t(".usage.step_3") %>
+      </div>
+    </article>
+  </section>
+
+  <section class="installation">
+    <article>
+      <div>
+        <h3><%= t(".installation.title") %></h3>
+        <br>
+        <%= t(".installation.description_1") %><br>
+
+        <%= image_tag("marketing/how_it_works/embed.jpg") %>
+
+        <br><br>
+        <%= t(".installation.description_2") %>
+      </div>
+    </article>
+  </section>
+
+  <section class="behind-the-scenes">
+    <article>
+      <div>
+        <h3><%= t(".behind_the_scenes.title") %></h3>
+        <%= t(".behind_the_scenes.description_html") %>
+      </div>
+    </article>
+  </section>
+
+  <section class="enjoy">
+    <article>
+      <div>
+        <h3><%= t(".enjoy.title") %></h3>
+        <%= t(".enjoy.description") %>
+      </div>
+    </article>
+  </section>
+</div>
+
+<%= render partial: "marketing/shared/footer" %>

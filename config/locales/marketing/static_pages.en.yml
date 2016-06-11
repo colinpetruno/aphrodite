@@ -1,6 +1,56 @@
 en:
   marketing:
     static_pages:
+      how_it_works:
+        title: "How It Works"
+        description: "The simplest way to customize and preview Bootstrap"
+        usage: 
+          title: "Usage"
+          step_1: "1. Create"
+          step_2: "2. Customize & Preview"
+          step_3: "3. Publish"
+        installation:
+          title: "Installation"
+          description_1: >
+            Aphrodite Stylesheets can be embedded just like any other 
+            stylesheet. We make it easy by adding the code in the embed 
+            section. Just copy it into the head of your document and you are 
+            all set. Aphrodite takes care of minifying and serves your 
+            stylesheets over CDN for the fastest loading times.
+          description_2: >
+            What sets Aphrodite apart is its very tiny Javascript utility. This 
+            utility adds the ability to preview your stylesheet live on your 
+            site in a way that only you can see! No more editing styles on a 
+            live site and hoping nothing breaks. Make your changes in 
+            confidence and then simply publish the stylesheet when you are 
+            happy with the changes.
+        behind_the_scenes:
+          title: "Behind the Scenes"
+          description_html: >
+            Aphrodite is built on the official Sass port of Bootstrap 3 
+            maintained by Twitter. For Bootstrap 4 we use the native Sass 
+            files. <br><br>
+
+            As you update your stylesheet we recompile the stylesheet and 
+            reload the preview with the actual outputted stylesheet. This is 
+            not an approximation or 'preview' of the stylesheet. It is the real 
+            thing so there are no surprises when you publish it to your site.
+            <br><br>
+
+            In order to keep things as fast as possible, Aphrodite uses the C 
+            port of the Sass compiler.<br><br>
+
+            Aphrodite manages your stylesheet on Cloudflare CDN after it's 
+            published. This ensures the fastest loading stylesheet while 
+            reducing the load on your server. If our site has issues for any 
+            reason, your stylesheets will continue to be served through 
+            Cloudflare with no interruption.<br><br>
+        enjoy:
+          title: "Enjoy Aphrodite"
+          description: >
+            Thanks for checking out Aphrodite. Start today and enjoy the 
+            easiest way to customize and preview Bootstrap! Don't hesitate to 
+            Contact Us if you have any questions. We are here to help!
       slack:
         installation:
           installation: "Installation"

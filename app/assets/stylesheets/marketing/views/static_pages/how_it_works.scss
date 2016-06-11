@@ -1,0 +1,49 @@
+.how-it-works {
+  color: #feffe7;
+  font-weight: bold;
+  padding-bottom: 10vh;
+  margin-top: 10vh;
+  text-align: center;
+
+  h1 {
+    font-size: 4em;
+  }
+}
+
+.how-it-works-info {
+  @extend .container-fluid;
+
+  > section {
+    @include make-row();
+    @include margin(3rem null 3rem null);
+
+    > article {
+      @include make-col();
+      @include make-col-span(12);
+
+      text-align: center;
+
+      div {
+        margin: 0 auto;
+        max-width: 960px;
+      }
+
+      img {
+        @include margin(1.5rem auto 1.5rem auto);
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .installation {
+    @include padding(3rem null 3rem null);
+    background-color: $background-blue;
+  }
+
+  .enjoy {
+    @include padding(3rem null 3rem null);
+    background-color: $background-yellow;
+    margin-bottom: 0;
+  }
+}
