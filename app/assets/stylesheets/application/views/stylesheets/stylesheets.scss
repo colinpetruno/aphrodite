@@ -2,6 +2,9 @@
   @include emphasized-box($white);
   @include make-container();
 
+  margin-bottom: 2rem;
+  min-height: 70vh;
+
   header {
     @include make-row();
     padding-bottom: 1em;
@@ -20,5 +23,9 @@
         }
       }
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 }

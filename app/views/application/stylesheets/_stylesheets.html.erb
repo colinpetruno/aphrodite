@@ -9,16 +9,20 @@
     </div>
   </header>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th></th>
-        <th>Preview Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render stylesheets %>
-    </tbody>
-  </table>
+  <% if stylesheets.present? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th>Preview Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render stylesheets %>
+      </tbody>
+    </table>
+  <% else %>
+    <%= image_tag("application/stylesheets/index/first_stylesheet.jpg") %>
+  <% end %>
 </div>
