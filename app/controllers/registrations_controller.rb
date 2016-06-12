@@ -9,6 +9,7 @@ class RegistrationsController < MarketingController
     @registration = Registration.new(registration_params)
 
     if @registration.register
+      sign_in @registration.user
       redirect_to stylesheets_path
     else
       render :new

@@ -21,6 +21,10 @@ class Registration
     save_registration
   end
 
+  def user
+    account.users.first
+  end
+
   private
 
   def save_registration
@@ -43,10 +47,6 @@ class Registration
     @_customer ||= Stripe::Customer.create(
       email: email
     )
-  end
-
-  def user
-    account.users.first
   end
 
   def account
