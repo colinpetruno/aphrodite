@@ -1,10 +1,18 @@
 <%= simple_form_for @stylesheet do |f| %>
   <div>
     <div>
-      <%= f.input :name %>
-      <%= f.input :framework, collection: Stylesheet.framework_select_options  %>
-      <%= f.input :version, collection: []  %>
+      <h3><%= t(".new_stylesheet") %></h3>
 
+      <%= f.input :name %>
+      <%= f.input :framework,
+        as: :hidden,
+        input_html: { value: "bootstrap" }
+      %>
+      <%= f.input :version,
+        collection: Stylesheet::VERSIONS[:bootstrap],
+        include_blank: false %>
+
+      <br>
       <%= f.submit %>
     </div>
   </div>

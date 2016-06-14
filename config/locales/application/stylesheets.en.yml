@@ -1,0 +1,5 @@
+en:
+  application:
+    stylesheets:
+      form:
+        new_stylesheet: "New Stylesheet"

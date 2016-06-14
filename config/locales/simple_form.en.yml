@@ -9,6 +9,8 @@ en:
       user:
         create: "Create User"
         update: "Save"
+      stylesheet:
+        create: "Create Stylesheet"
   simple_form:
     "yes": 'Yes'
     "no": 'No'

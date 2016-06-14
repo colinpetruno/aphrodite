@@ -1,7 +1,12 @@
 .new_stylesheet {
+
   input[type=submit] {
     @extend .btn;
     @extend .btn-primary;
+  }
+
+  h3 {
+    margin-bottom: 3rem;
   }
 
   select {
@@ -13,9 +18,13 @@
   }
 
   & > div > div {
+    @include emphasized-box($white);
     @include make-col();
     @include make-col-offset(3);
     @include make-col-span(6);
+    @include padding(3rem null);
+
+    text-align: center;
 
     @media (max-width: 34em) {
       @include make-col-offset(0);
