@@ -1,15 +1,11 @@
 .sidebar {
-  @include position(fixed, 0 0 3.35rem auto);
-  @include transform(translateX(400px));
-
+  @include position(fixed, 0 auto 54px -400px);
   @include transition-property(transform);
   @include transition-duration(0.3s);
   @include transition-timing-function(ease-in);
 
-  width: 400px;
-  height: 100%;
-
   background-color: #575761;
+  width: 400px;
   // background-color: #39da9f;
   // background-color: #fbe3ae;
 
@@ -17,10 +13,9 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-bottom: 50px;
   }
 
   &.is-visible {
-    @include transform(translateX(0));
+    @include transform(translateX(400px));
   }
 }
