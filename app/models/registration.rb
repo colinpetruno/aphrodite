@@ -15,6 +15,9 @@ class Registration
             :pricing_plan_id,
             presence: true
 
+  validates :password, length: { minimum: 8, maximum: 72 }
+  validate :passwords_match?
+
   def register
     return false unless valid?
 
@@ -68,5 +71,12 @@ class Registration
 
   def trial_end
     (DateTime.now().end_of_day + 7.days).to_i
+  end
+
+  def passwords_match?
+    if password != password_confirmation
+      errors.
+        add(:password, "doesn't match confirmation")
+    end
   end
 end
