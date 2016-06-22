@@ -231,6 +231,17 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (1.9.0)
+      bundler
+      ffi (~> 1.9.6)
+      sass (>= 3.3.0)
+    sassc-rails (1.2.1)
+      railties (>= 4.0.0)
+      sass
+      sassc (~> 1.9)
+      sprockets (> 2.11)
+      sprockets-rails
+      tilt
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -311,6 +322,7 @@ DEPENDENCIES
   resque (~> 1.26.0)
   resque-web
   sass-rails (~> 5.0)
+  sassc-rails
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -1,11 +1,14 @@
 section.variables {
+  border-left: 1px solid darken(#f9edd2, 10%);
+
   .panel-heading {
-    background-color: #35CA93;
-    border-bottom: 1px solid darken(#35CA93, 10%);
+    // background-color: #35CA93;
+    background-color: #f9edd2;
+    border-bottom: 1px solid darken(#f9edd2, 10%);
   }
 
   .panel-title a {
-    color: #ffffff;
+    color: $dark-text;
     display: block;
     padding: 5px 15px;
 

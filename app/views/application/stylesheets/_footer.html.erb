@@ -19,9 +19,12 @@
     </div>
 
     <div>
-      <%= simple_form_for([:publish, @stylesheet], method: :post) do |f| %>
-        <%= f.submit "Publish", data: { confirm: "This will make all changes live. Are you sure you want to continue?" } %>
-      <% end %>
+      <%= f.input :name, label: false %>
+      <%# f.submit %>
+
+      <%# simple_form_for([:publish, @stylesheet], method: :post) do |f| %>
+        <%# f.submit "Publish", data: { confirm: "This will make all changes live. Are you sure you want to continue?" } %>
+      <%# end %>
     </div>
 
     <div>

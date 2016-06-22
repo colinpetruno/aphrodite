@@ -1,9 +1,10 @@
 .stylesheet-footer {
-  @extend .bg-faded;
   @extend .form-inline;
   @extend .navbar;
   @extend .navbar-fixed-bottom;
   @extend .navbar-light;
+
+  background-color: #b7ff9f;
 
   > div {
     @include make-row();

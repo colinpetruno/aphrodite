@@ -29,7 +29,5 @@
 
 <%= simple_form_for(@stylesheet, remote: true) do |f| %>
   <%= render partial: "application/stylesheets/sidebar", locals: { f: f } %>
+  <%= render partial: "application/stylesheets/footer", locals: { f: f } %>
 <% end %>
-
-<%= render partial: "application/stylesheets/footer" %>
-

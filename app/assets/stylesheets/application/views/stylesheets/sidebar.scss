@@ -1,9 +1,3 @@
-/*.edit_stylesheet {*/
-  /*margin-top: -$grid-gutter-width;*/
-  /*padding-top: $grid-gutter-width;*/
-  /*height: 101vh;*/
-/*}*/
-
 .sidebar {
   @include position(fixed, 0 0 3.35rem auto);
   @include transform(translateX(400px));
@@ -17,33 +11,16 @@
 
   background-color: #575761;
   // background-color: #39da9f;
+  // background-color: #fbe3ae;
 
   section.variables {
-    height: 80%;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    padding-bottom: 50px;
   }
 
   &.is-visible {
     @include transform(translateX(0));
   }
-
-  footer {
-    padding-top: 15px;
-
-    input[type=submit] {
-      @extend .btn;
-      @extend .btn-block;
-
-      @include button-variant(
-        $btn-success-color,
-        $btn-success-bg,
-        $btn-success-border
-      );
-    }
-  }
-}
-
-.disable-scroll .sidebar {
-  // width: 415px;
 }
