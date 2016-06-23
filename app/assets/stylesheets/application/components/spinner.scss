@@ -1,5 +1,9 @@
+#iframe-spinner {
+  padding-top: 150px;
+}
+
 .spinner {
-  margin: 100px auto;
+  margin: auto auto;
   width: 80px;
   height: 80px;
   position: relative;
@@ -15,7 +19,7 @@
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: #feffe7;
+  background-color: #ff4428;
   border-radius: 100%;
 
   -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
