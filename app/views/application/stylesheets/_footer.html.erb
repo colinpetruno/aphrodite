@@ -1,6 +1,11 @@
 <div class="stylesheet-footer">
   <div>
     <div>
+
+      <button class="btn btn-secondary sidebar-toggle">
+        <span class="oi oi-menu"></span>
+      </button>
+
       <select id="preview-iframe-select" class="c-select" data-framework="<%= @stylesheet.framework %>" data-version="<%= @stylesheet.version %>">
         <option value="jumbotron">Jumbotron</option>
         <option value="narrow_jumbotron">Narrow Jumbotron</option>
@@ -16,21 +21,13 @@
           <span class="oi oi-browser"></span>
         </button>
       </div>
-    </div>
 
-    <div>
+
       <%= f.input :name, label: false %>
       <%= f.submit %>
 
-      <%# simple_form_for([:publish, @stylesheet], method: :post) do |f| %>
-        <%# f.submit "Publish", data: { confirm: "This will make all changes live. Are you sure you want to continue?" } %>
-      <%# end %>
+
     </div>
 
-    <div>
-      <button class="btn btn-secondary sidebar-toggle">
-        <span class="oi oi-menu"></span>
-      </button>
-    </div>
   </div>
 </div>

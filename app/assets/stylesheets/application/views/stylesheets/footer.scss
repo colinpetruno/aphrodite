@@ -9,24 +9,19 @@
   > div {
     @include make-row();
 
-    div {
+    > div {
       @include make-col();
-      @include make-col-span(3);
-
-      &:first-child {
-        @include make-col-span(5);
-      }
-
-      &:last-child {
-        @extend .text-xs-right;
-        @include make-col-span(4);
-      }
+      @include make-col-span(12);
     }
   }
 
   input[type=submit] {
     @extend .btn;
     @extend .btn-primary;
+  }
+
+  .viewer-toggle {
+    display: inline-block;
   }
 }
 
