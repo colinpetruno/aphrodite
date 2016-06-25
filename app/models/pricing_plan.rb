@@ -2,10 +2,10 @@ class PricingPlan < ApplicationRecord
   has_many :accounts
 
   def label
-    "#{name} ($#{price_in_dollars} - 1 Week Free)"
+    I18n.t(".models.pricing_plan.label", name: name, price: price_in_dollars)
   end
 
   def price_in_dollars
-    price / 100
+    price.to_f / 100
   end
 end

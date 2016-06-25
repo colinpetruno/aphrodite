@@ -1,5 +1,4 @@
 class SlackCommandParser
-
   def initialize(command)
     @command = command.downcase
   end

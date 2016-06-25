@@ -10,7 +10,6 @@ class Account < ApplicationRecord
 
   accepts_nested_attributes_for :users
 
-
   before_validation :add_url_protocol
 
   protected

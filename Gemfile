@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", ">= 5.0.0.beta3", "< 5.1"
+gem "rails", ">= 5.0.0.rc2", "< 5.1"
 
 gem "acts_as_list"
 gem "bcrypt", "~> 3.1.7"
@@ -24,6 +24,9 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug"
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
 end
 
 group :development do

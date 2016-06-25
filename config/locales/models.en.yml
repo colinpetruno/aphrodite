@@ -1,0 +1,4 @@
+en:
+  models:
+    pricing_plan:
+      label: "%{name} ($%{price} - 1 Month Free)"

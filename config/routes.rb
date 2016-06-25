@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   root "marketing/welcome#index"
 
   scope module: "marketing" do
-    get "/how-it-works" => "static_pages#how_it_works"
-    get "/slack" => "static_pages#slack"
+    get "/how-it-works", controller: "static_pages", action: "how_it_works"
+    get "/slack", controller: "static_pages", action: "slack"
   end
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', controller: "sessions", action: "create"
 
   resources :registrations, only: [:new, :create]
 
