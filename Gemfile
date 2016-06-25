@@ -30,7 +30,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "capistrano", "~> 3.1"
+  gem "capistrano", "3.4.1"
   gem "capistrano-passenger"
   gem "capistrano-rails", "~> 1.1"
   gem "capistrano-resque", "~> 0.2.2", require: false
