@@ -6,11 +6,24 @@
         <span class="oi oi-menu"></span>
       </button>
 
-      <select id="preview-iframe-select" class="c-select" data-framework="<%= @stylesheet.framework %>" data-version="<%= @stylesheet.version %>">
-        <option value="jumbotron">Jumbotron</option>
-        <option value="narrow_jumbotron">Narrow Jumbotron</option>
-        <option value="grid">Grid</option>
-        <option value="dashboard">Dashboard</option>
+      <select id="preview-iframe-select" class="c-select" data-framework="<%= @stylesheet.framework %>" data-version="<%= @stylesheet.version %>" data-link="<%= current_account.site_url %>">
+        <option value="jumbotron">
+          <%= t(".preview_templates.jumbotron") %>
+        </option>
+        <option value="narrow_jumbotron">
+          <%= t(".preview_templates.narrow_jumbotron") %>
+        </option>
+        <option value="grid">
+          <%= t(".preview_templates.grid") %>
+        </option>
+        <option value="dashboard">
+          <%= t(".preview_templates.dashboard") %>
+        </option>
+        <% if current_account.site_url.present? %>
+          <option value="site-preview">
+            Your Website
+          </option>
+        <% end %>
       </select>
 
       <div class="viewer-toggle" role="group" aria-label="Viewport Toggle">
@@ -26,6 +39,14 @@
       <%= f.input :name, label: false %>
       <%= f.submit %>
 
+      <%= link_to_if(
+        current_account.site_url.present?,
+        t(".preview"),
+        current_account.site_url + "?aphrodite=true&aphrodite-id=#{@stylesheet.id}",
+        target: :blank,
+        data: { no_turbolink: true }) do %>
+        <%= link_to t(".configure_preview"), edit_account_path %>
+      <% end %>
 
     </div>
 

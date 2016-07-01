@@ -3,3 +3,11 @@ en:
     stylesheets:
       form:
         new_stylesheet: "New Stylesheet"
+      footer:
+        preview: "Preview Stylesheet"
+        configure_preview: "Configure Preview"
+        preview_templates:
+          jumbotron: "Jumbotron"
+          narrow_jumbotron: "Narrow Jumbotron"
+          grid: "Grid"
+          dashboard: "Dashboard"

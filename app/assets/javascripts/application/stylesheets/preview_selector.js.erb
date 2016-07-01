@@ -1,22 +1,36 @@
 $(function(){
-  $(document).on("change", "#preview-iframe-select", function(){
-    var $iframe = $("#preview-iframe");
-    var stylesheetId = $iframe.data("stylesheet-id");
-    var selectedPage = $(this).val();
-    var rootUrl = "<%= Rails.application.config.root_url %>";
-    var framework = $(this).data("framework");
-    var version = $(this).data("version");
-    var newUrl =
-      rootUrl +
-      "/" +
-      selectedPage +
-      "_" +
-      framework +
-      "_" +
-      version +
-      "_example.html?preview-css=true&stylesheetId=" +
-      stylesheetId;
+  function isCustomPreview($select) {
+    return ($select.val() == "site-preview");
+  };
 
-    $("#preview-iframe").attr("src", newUrl);
+  function stylesheetId() {
+    return $("#preview-iframe").data("stylesheet-id");
+  };
+
+  function customPreviewLink($select) {
+    return $select.data("link") + "?preview-css=true&stylesheetId=" + stylesheetId();
+  };
+
+  function previewLink($select) {
+    var rootUrl = "<%= Rails.application.config.root_url %>";
+    var framework = $select.data("framework");
+    var version = $select.data("version");
+
+     return rootUrl + "/" + $select.val() + "_" +
+        framework + "_" + version +
+        "_example.html?aphrodite=true&aphrodite-id=" + stylesheetId();
+  };
+
+  $(document).on("change", "#preview-iframe-select", function(){
+    var $select = $(this);
+    var link;
+
+    if(isCustomPreview($select)) {
+      link = customPreviewLink($select);
+    } else {
+      link = previewLink($select);
+    }
+
+    $("#preview-iframe").attr("src", link);
   });
 });

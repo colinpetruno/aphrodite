@@ -41,10 +41,12 @@
     },
 
     attachPanel: function() {
-      var div = document.createElement('div');
-      div.setAttribute("id", "aphrodite-container");
-      div.innerHTML = toolbarContent;
-      window.document.body.appendChild(div);
+      if (window.parent === window) {
+        var div = document.createElement('div');
+        div.setAttribute("id", "aphrodite-container");
+        div.innerHTML = toolbarContent;
+        window.document.body.appendChild(div);
+      }
     },
 
     remove: function() {
