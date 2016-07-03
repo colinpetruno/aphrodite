@@ -1,7 +1,7 @@
 en:
   application:
     embeds:
-      show:
+      instructions:
         stylesheet:
           header: "Include the Stylesheet"
           instructions: > 

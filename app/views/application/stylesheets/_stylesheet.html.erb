@@ -4,9 +4,7 @@
     <%= stylesheet.name %>
   <% end %>
   </td>
-  <td>
-    <%= link_to "Embed", stylesheet_embed_path(stylesheet) %>
-  </td>
+
   <td>
     <%= link_to_if(
       current_account.site_url.present?,

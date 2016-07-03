@@ -1,0 +1,33 @@
+    <h4><%= t(".stylesheet.header") %></h4>
+    <p><%= t(".stylesheet.instructions") %></p>
+
+    <code class="language-markup" data-lang="html">
+      &lt;link id="AphroditeStylesheet" rel="stylesheet" type="text/css" href="<%= "#{stylesheet_url(@stylesheet)}.css" %>"&gt;
+    </code>
+    <br><br>
+
+    <h4><%= t(".javascript.header") %></h4>
+    <p><%= t(".javascript.instructions") %></p>
+
+
+    <code class="language-markup" data-lang="html">
+      &lt;script type="text/javascript" src="<%= embed_stylesheet_url(format: :js) %>"&gt;&lt;/script&gt;
+    </code>
+    <br><br>
+    <h4><%= t(".example.full.header") %></h4>
+
+<pre>
+<code class="language-markup" data-lang="html">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- <%= t(".example.full.head_content") %> --&gt;
+    &lt;link id="AphroditeStylesheet" rel="stylesheet" type="text/css" href="<%= "#{stylesheet_url(@stylesheet)}.css" %>"&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;!-- <%= t(".example.full.body_content") %> -->
+    &lt;script type="text/javascript" src="<%= embed_stylesheet_url(format: :js) %>"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
