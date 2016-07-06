@@ -47,6 +47,16 @@ class Application::StylesheetsController < AuthenticatedController
     end
   end
 
+  def destroy
+    stylesheet = Stylesheet.find(params[:id])
+
+    if stylesheet.destroy
+      redirect_to stylesheets_path
+    else
+      redirect_to stylesheet_path, error: "Something went wrong"
+    end
+  end
+
   def publish
     @stylesheet = current_account.stylesheets.find(params[:id])
 

@@ -16,4 +16,9 @@
         <%# #TODO: Add Link To Help %>
     <% end %>
   </td>
+  <td>
+    <%= simple_form_for(stylesheet, method: :delete) do |f| %>
+      <%= f.submit %>
+    <% end %>
+  </td>
 </tr>

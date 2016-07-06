@@ -19,7 +19,14 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
     end
 
-    resources :stylesheets, only: [:create, :edit, :index, :new, :show, :update] do
+    resources :stylesheets, only: [
+                                    :create,
+                                    :destroy,
+                                    :edit,
+                                    :index,
+                                    :new,
+                                    :show,
+                                    :update] do
       member do
         post :publish
       end
