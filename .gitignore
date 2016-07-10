@@ -16,6 +16,8 @@
 !/tmp/.keep
 /.sass-cache/*
 
+/config/secrets.local.yml
+
 # Ignore Byebug command history file.
 .byebug_history
 /chef/nodes/*

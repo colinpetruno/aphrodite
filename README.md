@@ -1,24 +1,30 @@
-## README
+# Welcome to Aphrodite 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aphrodite is meant to be the simplest way for anyone to configure and preview
+Bootstrap. We do this by allowing the users to customize the sass variables
+and source directly and then handling all the setup typically associated with
+editing a Css Preprocessor. 
 
-Things you may want to cover:
+This allows the user to either just edit and go or in the future will allow
+advanced manipulation of the bootstrap source to create their stylesheets.
 
-* Ruby version
+Aphrodite provides a utility to preview stylesheets directly on our users sites
+without having to actually install it there. This means they can see the exact
+result of what the stylesheet will look like before any of their customers can
+see it.
 
-* System dependencies
+## Getting Started
 
-* Configuration
+1. Clone the repo
 
-* Database creation
+2. Copy the local secrets file
+      $ cp config/secrets.local.yml.example config/secrets.local.yml
 
-* Database initialization
+3. Install libsass
 
-* How to run the test suite
+4. Run Rails
+      $ rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+5. Run a worker
+      $ bundle exec rake:resque:work QUEUE=*
 
-* Deployment instructions
-
-* ...
