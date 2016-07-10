@@ -12,6 +12,7 @@ class StylesheetCompiler
     copy_source_files
     build_variable_file
     compile_stylesheet
+    invalidate_cache if Rails.env.production?
   end
 
   protected
@@ -19,6 +20,10 @@ class StylesheetCompiler
   attr_reader :preview, :stylesheet
 
   private
+
+  def invalidate_cache
+    CacheInvalidator.invalidate(stylesheet, preview)
+  end
 
   def copy_source_files
     SourceFileCopier.new(stylesheet, preview).copy
@@ -58,4 +63,3 @@ class StylesheetCompiler
     end
   end
 end
-

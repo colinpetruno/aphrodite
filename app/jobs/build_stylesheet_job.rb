@@ -5,7 +5,10 @@ class BuildStylesheetJob
     puts "COMPILING STYLESHEET"
     @stylesheet = Stylesheet.find(stylesheet_id)
     StylesheetCompiler.new(@stylesheet, preview).compile
+
     puts "ABOUT TO BROADCAST"
-    ActionCable.server.broadcast "stylesheet_#{stylesheet_id}", message: "hello"
+    ActionCable.
+      server.
+      broadcast "stylesheet_#{stylesheet_id}", message: "compiled"
   end
 end
