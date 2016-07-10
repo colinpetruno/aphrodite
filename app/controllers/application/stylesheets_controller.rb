@@ -1,4 +1,5 @@
 class Application::StylesheetsController < AuthenticatedController
+  before_action :set_cache_headers, only: [:show]
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
@@ -70,6 +71,10 @@ class Application::StylesheetsController < AuthenticatedController
   end
 
   private
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "max-age=10081, public"
+  end
 
   def stylesheet_params
     params.
