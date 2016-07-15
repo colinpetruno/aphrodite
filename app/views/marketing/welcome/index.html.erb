@@ -4,25 +4,22 @@
     <p>Let your designers take control of your site's look and not have to
       bother developers.</p>
 
-    <% if Rails.env == "production" %>
-      <h6>Coming Soon!</h6>
-    <% else %>
-      <%= link_to "Get Started", new_registration_path, class: "btn btn-warning" %>
-    <% end %>
+    <h4>Beta Registrations Open, You will not be charged while Aphrodite
+      remains in Beta</h4>
 
+
+    <%= link_to "Get Started", new_registration_path, class: "btn btn-warning" %>
   </div>
 <% end %>
 
-<% if Rails.env != "production" || params[:preview] == "true" %>
-  <a name="features"></a>
-  <%= render partial: "build" %>
-  <%= render partial: "preview" %>
-  <%= render partial: "slack" %>
+<a name="features"></a>
+<%= render partial: "build" %>
+<%= render partial: "preview" %>
+<%= render partial: "slack" %>
 
-  <div>
-    <a name="pricing"></a>
-    <%= render partial: "pricing_plans/pricing_plans" %>
-  </div>
+<div>
+  <a name="pricing"></a>
+  <%= render partial: "pricing_plans/pricing_plans" %>
+</div>
 
-  <%= render partial: "marketing/shared/footer" %>
-<% end %>
+<%= render partial: "marketing/shared/footer" %>

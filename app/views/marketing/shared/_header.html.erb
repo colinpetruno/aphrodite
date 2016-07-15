@@ -13,9 +13,7 @@
       <%= link_to(t(".features"), root_path(anchor: "features")) %>
       <%= link_to(t(".pricing"), root_path(anchor: "pricing")) %>
       <a href="#"><%= t(".about") %></a>
-      <% if Rails.env != "production" || params[:preview] == "true" %>
-        <%= link_to t(".login"), new_user_session_path %>
-      <% end %>
+      <%= link_to t(".login"), new_user_session_path %>
     </div>
   </div>
 </nav>
