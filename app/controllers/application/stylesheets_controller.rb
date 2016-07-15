@@ -73,9 +73,11 @@ class Application::StylesheetsController < AuthenticatedController
   private
 
   def set_cache_headers
-    response.headers["Cache-Control"] = "public, max-age=31536000"
-    remove_keys = %w(X-Runtime Server X-XSS-Protection X-Runtime X-Request-Id X-Frame-Options X-Content-Type-Options Content-Transfer-Encoding Set-Cookie)
-    response.headers.delete_if{|key| remove_keys.include? key}
+    unless params[:preview]
+      response.headers["Cache-Control"] = "public, max-age=31536000"
+      remove_keys = %w(X-Runtime Server X-XSS-Protection X-Runtime X-Request-Id X-Frame-Options X-Content-Type-Options Content-Transfer-Encoding Set-Cookie)
+      response.headers.delete_if{|key| remove_keys.include? key}
+    end
   end
 
   def stylesheet_params
