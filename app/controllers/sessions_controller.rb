@@ -11,7 +11,7 @@ class SessionsController < AuthenticatedController
   def setup
     if params[:provider] == "slack"
       omniauth_strategy.options[:scope] = "incoming-webhook,commands"
-      omniauth_strategy.options[:client_id] = "33410623319.35772666103"
+      omniauth_strategy.options[:client_id] = Rails.application.secrets.slack_client_id
     end
 
     render text: "Omniauth setup phase.", status: :ok

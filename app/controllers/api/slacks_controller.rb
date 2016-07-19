@@ -12,7 +12,7 @@ class Api::SlacksController < ApplicationController
     #help (done)
 
     # {
-    # "token"=>"8S4CA1s45ugCswkSmWTYkSDB",
+    # "token"=>"xxxxxxxxxxx",
     # "team_id"=>"T0ZC2JB9D",
     # "team_domain"=>"lunasfarms",
     # "channel_id"=>"D0ZC3KLCD",
@@ -30,9 +30,9 @@ class Api::SlacksController < ApplicationController
   private
 
   def verify_slack_request
-    if params[:token] != "8S4CA1s45ugCswkSmWTYkSDB"
-    # 8S4CA1s45ugCswkSmWTYkSDB https://lunasfarms.slack.com/services/33411544167
-    # BBQDtnJLMeAPDyiXeBtr53wD  https://api.slack.com/applications/33410623319.35772666103
+    if params[:token] != Rails.application.secrets.slack_token
+    # https://lunasfarms.slack.com/services/33411544167
+    #  https://api.slack.com/applications/33410623319.35772666103
       render json: {
         text: "Ooops. We could not authenticate this request."
       } and return
