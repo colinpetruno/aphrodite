@@ -3,6 +3,9 @@ class Api::SlacksController < ApplicationController
   before_action :verify_slack_request
 
   def create
+    if [request.headers["ssl_check"], request.headers["SSL_CHECK"]].include?(1)
+      render json: {}, status: :ok
+    end
 #     SlackAuthentication.find_by(team_id: params[:team_id])
     render json: SlackResponder.new(params[:text], params[:team_id])
     #stylesheets/index (done)
