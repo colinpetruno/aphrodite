@@ -1,6 +1,6 @@
 yaml = "#{Rails.root}/config/secrets.local.yml"
 
-if File.exist?(yaml)
+if File.exist?(yaml) && !Rails.env.production?
   require "erb"
 
   all_secrets = YAML.load(ERB.new(IO.read(yaml)).result) || {}
