@@ -4,14 +4,14 @@
   @extend .navbar-fixed-bottom;
   @extend .navbar-light;
 
-  background-color: #b7ff9f;
+  background-color: $footer-bg;
 
   > div {
     @include make-row();
 
     > div {
-      @include make-col();
-      @include make-col-span(12);
+/*      @include make-col();*/
+      /*@include make-col-span(12);*/
     }
   }
 

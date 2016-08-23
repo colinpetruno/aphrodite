@@ -1,12 +1,18 @@
 <div class="stylesheet-footer">
   <div>
-    <div>
 
+    <div class="col-xs-3">
       <button class="btn btn-secondary sidebar-toggle">
         <span class="oi oi-menu"></span>
       </button>
+    </div>
+
+    <div class="col-xs-6" style="text-align: center">
 
       <select id="preview-iframe-select" class="c-select" data-framework="<%= @stylesheet.framework %>" data-version="<%= @stylesheet.version %>" data-link="<%= current_account.site_url %>">
+        <option value="components">
+          <%= t(".preview_templates.components") %>
+        </option>
         <option value="jumbotron">
           <%= t(".preview_templates.jumbotron") %>
         </option>
@@ -34,25 +40,14 @@
           <span class="oi oi-browser"></span>
         </button>
       </div>
-
-
-      <%= f.input :name, label: false %>
-      <%= f.submit %>
-
-      <%= link_to_if(
-        current_account.site_url.present?,
-        t(".preview"),
-        current_account.site_url + "?aphrodite=true&aphrodite-id=#{@stylesheet.id}",
-        target: :blank,
-        data: { no_turbolink: true }) do %>
-        <%= link_to t(".configure_preview"), edit_account_path %>
-      <% end %>
-
-      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#embed-instructions">
-        Embed Instructions
-      </button>
-
     </div>
+
+
+    <div class="col-xs-3" style="text-align: right">
+      <%# f.input :name, label: false %>
+      <%= f.submit %>
+    </div>
+
   </div>
 </div>
 

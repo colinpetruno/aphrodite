@@ -1,8 +1,7 @@
 <div class="container" id="edit-stylesheet" data-stylesheet-id="<%= @stylesheet.id %>">
+  <%= render partial: "primary_buttons" %>
   <div class="row">
     <div class="col-xs-12">
-
-
       <div id="preview-window" class="desktop-preview">
         <div class="browser">
           <div></div>
@@ -17,13 +16,15 @@
             </div>
           </div>
 
-          <iframe onmouseover="cssManager.disableBodyScroll()" onmouseout="cssManager.enableBodyScroll()" id="preview-iframe" class="embed-responsive-item" data-stylesheet-id="<%= @stylesheet.id %>" src="<%= Rails.application.config.root_url %>/jumbotron_<%= @stylesheet.framework %>_<%= @stylesheet.version %>_example.html?preview-css=true&stylesheetId=<%= @stylesheet.id %>">
+          <iframe onmouseover="cssManager.disableBodyScroll()" onmouseout="cssManager.enableBodyScroll()" id="preview-iframe" class="embed-responsive-item" data-stylesheet-id="<%= @stylesheet.id %>" src="<%= Rails.application.config.root_url %>/components_<%= @stylesheet.framework %>_<%= @stylesheet.version %>_example.html?preview-css=true&stylesheetId=<%= @stylesheet.id %>">
           </iframe>
         </div>
       </div>
-
     </div>
   </div>
+
+  <br><br>
+  <%= render partial: "primary_buttons" %>
 </div>
 
 

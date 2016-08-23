@@ -4,10 +4,8 @@
   @include transition-duration(0.3s);
   @include transition-timing-function(ease-in);
 
-  background-color: #575761;
   width: 400px;
-  // background-color: #39da9f;
-  // background-color: #fbe3ae;
+  background-color: #ffffff;
 
   section.variables {
     height: 100%;
