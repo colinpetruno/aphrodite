@@ -5,12 +5,12 @@
       t(".preview"),
       current_account.site_url + "?aphrodite=true&aphrodite-id=#{@stylesheet.id}",
       target: :blank,
-      class: "btn btn-default btn-lg",
+      class: "btn btn-info btn-lg",
       data: { no_turbolink: true }) do %>
       <%= link_to t(".configure_preview"), edit_account_path, class: "btn btn-default btn-lg" %>
     <% end %>
 
-    <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#embed-instructions">
+    <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#embed-instructions">
       Embed Instructions
     </button>
     <br><br>
