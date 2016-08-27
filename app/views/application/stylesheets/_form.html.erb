@@ -3,14 +3,16 @@
     <div>
       <h3><%= t(".new_stylesheet") %></h3>
 
+      <h5>Based on Bootstrap 3.3</h5>
+
+      <br>
+
       <%= f.input :name %>
       <%= f.input :framework,
         as: :hidden,
         input_html: { value: "bootstrap" }
       %>
-      <%= f.input :version,
-        collection: Stylesheet::VERSIONS[:bootstrap],
-        include_blank: false %>
+      <%= f.input :version, as: :hidden, input_html: { value: "3.3" } %>
 
       <br>
       <%= f.submit %>
