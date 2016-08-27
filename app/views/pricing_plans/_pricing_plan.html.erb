@@ -22,12 +22,6 @@
         </strong>
         <%= t(".requests") %><br>
       </section>
-
-      <% if pricing_plan.slack_integration? %>
-        <section>
-          <%= t(".slack_integration_html") %>
-        </section>
-      <% end %>
     </article>
 
     <% if controller_name.include?("welcome") %>

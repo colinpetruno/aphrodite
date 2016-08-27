@@ -9,9 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= render partial: "application/shared/google_analytics" %>
+    <%= render partial: "application/shared/zopim" %>
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   </head>
 
-  <body>
+  <body class="<%= "#{controller_name}-#{action_name}" %>">
     <%= render "application/shared/header" %>
 
     <%= yield %>
@@ -22,6 +25,5 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <%= javascript_include_tag 'cable' %>
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   </body>
 </html>

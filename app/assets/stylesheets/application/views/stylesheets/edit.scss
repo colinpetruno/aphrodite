@@ -104,3 +104,16 @@
     }
   }
 }
+
+.stylesheets-edit {
+  .zopim {
+    bottom: 54px !important;
+    right: 15px !important;
+  }
+
+  &.disable-scroll {
+    .zopim {
+      right: 30px !important;
+    }
+  }
+}
