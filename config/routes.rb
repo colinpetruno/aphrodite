@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   scope module: "marketing" do
     get "/how-it-works", controller: "static_pages", action: "how_it_works"
     get "/slack", controller: "static_pages", action: "slack"
+
+    resources :inquiries
   end
 
   get '/auth/:provider/callback', controller: "sessions", action: "create"

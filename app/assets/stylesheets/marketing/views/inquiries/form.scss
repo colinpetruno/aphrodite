@@ -1,0 +1,14 @@
+.inquiry-form {
+  @include make-row();
+
+  &>div {
+    @include make-col();
+    @include make-col-offset(3);
+    @include make-col-span(6);
+
+    background-color: $white;
+    margin-top: 100px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}

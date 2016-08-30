@@ -4,6 +4,7 @@ en:
       navbar_links: &navbar_links
         account: "Account"
         billing: "Billing"
+        contact: "Contact Us"
         logout: "Logout"
         stylesheets: "Stylesheets"
         team_members: "Team Members"

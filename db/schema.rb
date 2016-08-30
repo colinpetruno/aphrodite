@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501150200) do
+ActiveRecord::Schema.define(version: 20160828094808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +23,8 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.boolean  "slack_publishing", default: false, null: false
     t.string   "stripe_id"
     t.integer  "pricing_plan_id",  default: 1,     null: false
+    t.index ["pricing_plan_id"], name: "index_accounts_on_pricing_plan_id", using: :btree
   end
-
-  add_index "accounts", ["pricing_plan_id"], name: "index_accounts_on_pricing_plan_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -41,9 +39,8 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "stripe_id"
+    t.index ["account_id"], name: "index_credit_cards_on_account_id", using: :btree
   end
-
-  add_index "credit_cards", ["account_id"], name: "index_credit_cards_on_account_id", using: :btree
 
   create_table "default_variables", force: :cascade do |t|
     t.string  "name"
@@ -52,6 +49,16 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.string  "version"
     t.integer "category_id"
     t.integer "position",    null: false
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.text     "message",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_inquiries_on_user_id", using: :btree
   end
 
   create_table "pricing_plans", force: :cascade do |t|
@@ -71,9 +78,8 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.string   "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_slack_authentications_on_account_id", using: :btree
   end
-
-  add_index "slack_authentications", ["account_id"], name: "index_slack_authentications_on_account_id", using: :btree
 
   create_table "stylesheets", force: :cascade do |t|
     t.string   "name"
@@ -82,9 +88,8 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "account_id"
+    t.index ["account_id"], name: "index_stylesheets_on_account_id", using: :btree
   end
-
-  add_index "stylesheets", ["account_id"], name: "index_stylesheets_on_account_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -109,14 +114,13 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.integer  "invited_by_id"
     t.integer  "invitations_count",      default: 0
     t.integer  "role",                   default: 0,  null: false
+    t.index ["account_id"], name: "index_users_on_account_id", using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+    t.index ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["account_id"], name: "index_users_on_account_id", using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
-  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
-  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "variables", force: :cascade do |t|
     t.integer  "stylesheet_id"
@@ -128,11 +132,11 @@ ActiveRecord::Schema.define(version: 20160501150200) do
     t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["stylesheet_id"], name: "index_variables_on_stylesheet_id", using: :btree
   end
 
-  add_index "variables", ["stylesheet_id"], name: "index_variables_on_stylesheet_id", using: :btree
-
   add_foreign_key "accounts", "pricing_plans"
+  add_foreign_key "inquiries", "users"
   add_foreign_key "stylesheets", "accounts"
   add_foreign_key "users", "accounts"
 end

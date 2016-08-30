@@ -1,0 +1,15 @@
+<div class="inquiry-form">
+  <div>
+    <header>
+      <h3>Have a Question? Contact Us!</h3>
+    </header>
+
+    <%= simple_form_for inquiry do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :message %>
+      <%= f.submit %>
+    <% end %>
+
+  </div>
+</div>

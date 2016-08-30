@@ -25,5 +25,16 @@ module CssManager
     end
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s]
+
+    config.action_mailer.default_url_options = {
+      host: "mail.aphroditecss.com",
+      protocol: "https"
+    }
+
+    config.action_mailer.delivery_method = :mailgun
+    config.action_mailer.mailgun_settings = {
+      api_key: Rails.application.secrets.mailgun_api_secret,
+      domain: "mail.aphroditecss.com"
+    }
   end
 end

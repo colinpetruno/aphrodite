@@ -7,4 +7,6 @@ class User < ApplicationRecord
   enum role: { member: 0, publisher: 1, owner: 2 }
 
   belongs_to :account, inverse_of: :users
+
+  has_many :inquiries
 end
