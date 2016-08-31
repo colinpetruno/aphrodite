@@ -1,4 +1,4 @@
-.hero-section {
+.hero-block {
   background-size: cover;
   background-position: center;
   background-image: image-url("marketing/index/backgrounds/Elegant_Background-24-sm.jpg");
@@ -14,15 +14,6 @@
 
     & > div {
       min-height: 80vh;
-    }
-  }
-
-
-  .hero-content {
-    color: #feffe7;
-    padding: 20% 10%;
-    h3 {
-      font-family: 'Montserrat', sans-serif;
     }
   }
 }

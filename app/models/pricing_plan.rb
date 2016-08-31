@@ -6,6 +6,6 @@ class PricingPlan < ApplicationRecord
   end
 
   def price_in_dollars
-    price.to_f / 100
+    (price.to_f / 100).to_i
   end
 end

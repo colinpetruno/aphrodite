@@ -21,6 +21,12 @@ en:
           having to edit any Less or Sass. No need for complicated build
           pipelines or compilers.
         how_it_works: "How It Works"
+      hero_content:
+        description: >
+          Quickly customize hundreds of custom variables to make your own
+          themes.
+        get_started: "Get Started"
+        heading: "Save time and hassel styling your Bootstrap themes!"
       preview:
         title: Preview Stylesheets in Real Time
         description: >

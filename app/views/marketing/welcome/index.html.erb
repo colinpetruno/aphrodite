@@ -1,15 +1,5 @@
 <%= render "marketing/shared/hero_block" do %>
-  <div class="hero-content">
-    <h3>Manage Your Websites Appeal</h3>
-    <p>Let your designers take control of your site's look and not have to
-      bother developers.</p>
-
-    <h4>Beta Registrations Open, You will not be charged while Aphrodite
-      remains in Beta</h4>
-
-
-    <%= link_to "Get Started", new_registration_path, class: "btn btn-warning" %>
-  </div>
+  <%= render partial: "hero_content" %>
 <% end %>
 
 <a name="features"></a>

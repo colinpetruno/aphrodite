@@ -4,4 +4,14 @@ en:
       edit:
         header: "Account Settings"
       form:
+        site_url_description: >
+          Enter the base domain (example.com) for your site that Aphrodite is 
+          installed on. This will allow you to preview your styles in the 
+          preview window while editing
+        site_url_label: "Site Url"
+        slack_label: "Slack"
+        slack_description: >
+          Allow publishing stylesheets directly from Slack. This would let 
+          anyone with access to your Slack account the ability to publish a 
+          stylesheet.
         submit: "Save Settings"

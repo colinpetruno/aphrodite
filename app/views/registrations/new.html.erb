@@ -1,19 +1,6 @@
 <%= render "marketing/shared/hero_block" do %>
-  <div class="centered-container">
-    <div>
-      <div>
-        <div class="registration-form">
-          <div>
-            <header>
-              <h3>Sign Up</h3>
-            </header>
-
-            <%= render "form", registration: @registration %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: "new" %>
+  <br><br>
 <% end %>
 
 <%= render partial: "marketing/shared/footer" %>

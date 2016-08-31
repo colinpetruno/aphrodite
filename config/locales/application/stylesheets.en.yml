@@ -2,12 +2,21 @@ en:
   application:
     stylesheets:
       form:
+        bootstrap_version: "Based on Bootstrap 3.3"
         new_stylesheet: "New Stylesheet"
       footer:
-        preview: "Preview Stylesheet"
-        configure_preview: "Configure Preview"
         preview_templates:
           jumbotron: "Jumbotron"
           narrow_jumbotron: "Narrow Jumbotron"
           grid: "Grid"
           dashboard: "Dashboard"
+      primary_buttons:
+        embed_instructions: "Embed Instructions"
+        preview: "Preview Stylesheet"
+        configure_preview: "Configure Preview"
+      stylesheet:
+        delete: "Delete"
+        preview: "Preview"
+      stylesheets:
+        new_stylesheet: "New Stylesheet"
+        your_stylesheets: "Your Stylesheets"

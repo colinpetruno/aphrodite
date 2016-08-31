@@ -12,7 +12,7 @@
     @include emphasized-box($white);
     color: #656566;
     font-weight: 200;
-    min-height: 495px;
+    min-height: 395px;
     padding: 50px 0;
     text-align: center;
   }
@@ -42,7 +42,7 @@
   }
 
   > div > article {
-    min-height: 184px;
+    min-height: 100px;
   }
 
   section {

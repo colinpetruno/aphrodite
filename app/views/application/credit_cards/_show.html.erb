@@ -1,0 +1,16 @@
+<div class="text-xs-center">
+  <h2><%= t(".plan", plan_name: current_account.pricing_plan.name) %> </h2>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="alert alert-success text-xs-center">
+      <%= t(".account_status") %><br>
+      <%= link_to t(".update_card"), edit_account_credit_card_path %>
+    </div>
+  </div>
+</div>
+
+<%= render partial: "pricing_plans/pricing_plans" %>

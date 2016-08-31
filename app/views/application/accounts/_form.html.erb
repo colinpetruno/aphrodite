@@ -1,16 +1,15 @@
 <%= simple_form_for account do |f| %>
   <br><br>
-  <label>Site Url</label>
-  <p>Enter the base domain (example.com) for your site that Aphrodite is installed on. This
-    will allow you to preview your styles in the preview window while editing
-    stylesheets.</p>
+  <label><%= t(".site_url_label") %></label>
+  <p><%= t(".site_url_description") %></p>
   <%= f.input :site_url, label: false %>
 
   <br><br>
-  <h5>Slack</h5>
-  <%= f.input :slack_publishing, as: :boolean %>
-  <p>Allow publishing stylesheets directly from Slack. This would let anyone
-    with access to your Slack account the ability to publish a stylesheet.</p>
+  <% if 1==2 %>
+    <h5><%= t(".slack_label") %></h5>
+    <%= f.input :slack_publishing, as: :boolean %>
+    <p><%= t(".slack_description") %></p>
+  <% end %>
 
   <%= f.submit t(".submit") %>
 <% end %>

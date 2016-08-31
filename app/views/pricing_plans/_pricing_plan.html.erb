@@ -15,13 +15,6 @@
           <%= pricing_plan.number_of_users || t(".unlimited") %>
         </strong> <%= "user".pluralize(pricing_plan.number_of_users) %>
       </section>
-
-      <section>
-        <strong>
-          <%= pricing_plan.number_of_requests %>
-        </strong>
-        <%= t(".requests") %><br>
-      </section>
     </article>
 
     <% if controller_name.include?("welcome") %>

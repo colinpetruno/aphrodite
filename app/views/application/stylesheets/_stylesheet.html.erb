@@ -8,7 +8,7 @@
   <td>
     <%= link_to_if(
       current_account.site_url.present?,
-      "Preview",
+      t(".preview"),
       current_account.site_url + "?aphrodite=true&aphrodite-id=#{stylesheet.id}",
       target: :blank,
       data: { no_turbolink: true }) do %>
@@ -18,7 +18,7 @@
   </td>
   <td>
     <%= simple_form_for(stylesheet, method: :delete) do |f| %>
-      <%= f.submit "Delete", class: "btn btn-secondary btn-sm", data: { confirm: "This cannot be undone" } %>
+      <%= f.submit t(".delete"), class: "btn btn-secondary btn-sm", data: { confirm: "This cannot be undone" } %>
     <% end %>
   </td>
 </tr>

@@ -1,4 +1,10 @@
-application:
-  credit_cards:
-    form:
-      save: "Save"
+en:
+  application:
+    credit_cards:
+      form:
+        save: "Save"
+      show:
+        account_status: "Your account is active and being billed monthly"
+        plan: "You're on the %{plan_name} plan"
+        update_card: "Update Credit Card"
+

@@ -1,0 +1,8 @@
+en:
+  marketing:
+    inquiries:
+      create:
+        title: "Thanks for Reaching Out!"
+        description: "We will get back to your shortly!"
+      form:
+        title: "Have a Question? Contact Us!"
