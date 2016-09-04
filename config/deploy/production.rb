@@ -26,7 +26,7 @@ server '96.126.118.71',
 # role :db,  %w{deploy@example.com}
 
 role :resque_worker, "96.126.118.71"
-set :workers, { "stylesheet_builds" => 2 }
+set :workers, { "stylesheet_builds" => 2, "default" => 1 }
 
 # Configuration
 # =============
