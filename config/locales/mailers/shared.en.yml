@@ -1,0 +1,12 @@
+en:
+  shared:
+    mailers:
+      footer:
+        crafted_in_boston: "Beautiful Stylesheets - Crafted with ❤ in Boston."
+        features: "Features"
+        home: "Home"
+        login: "Login"
+        pricing: "Pricing"
+      header:
+        help: "Help"
+        login: "Login"

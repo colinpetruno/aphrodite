@@ -10,13 +10,13 @@
     <title>Grid Template for Bootstrap</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link id="cssManagerStylesheet" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link id="AphroditeStylesheet" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-      var cssManager = {};
-      cssManager.rootUrl = "stylesheets/";
-      cssManager.getParameterByName = function (name) {
+      var Aphrodite = {};
+      Aphrodite.rootUrl = "stylesheets/";
+      Aphrodite.getParameterByName = function (name) {
           var url = window.location.href;
           name = name.replace(/[\[\]]/g, "\\$&");
           var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
@@ -25,15 +25,15 @@
           if (!results[2]) return '';
           return decodeURIComponent(results[2].replace(/\+/g, " "));
       }
-      cssManager.previewCss = cssManager.getParameterByName("preview-css");
-      var stylesheetId = cssManager.getParameterByName("stylesheetId");
-      if(cssManager.previewCss == "true") {
-        cssManager.styleTag = document.getElementById("cssManagerStylesheet")
+      Aphrodite.previewCss = Aphrodite.getParameterByName("preview-css");
+      var stylesheetId = Aphrodite.getParameterByName("stylesheetId");
+      if(Aphrodite.previewCss == "true") {
+        Aphrodite.styleTag = document.getElementById("AphroditeStylesheet")
         if(parseInt(stylesheetId) > 0){
-          var newUrl = cssManager.rootUrl + parseInt(stylesheetId) + ".css?preview=true"
-          cssManager.styleTag.href = newUrl;
+          var newUrl = Aphrodite.rootUrl + parseInt(stylesheetId) + ".css?preview=true"
+          Aphrodite.styleTag.href = newUrl;
         } else {
-          cssManager.styleTag.href = cssManager.styleTag.href + "?preview=true"
+          Aphrodite.styleTag.href = Aphrodite.styleTag.href + "?preview=true"
         }
       }
     </script>

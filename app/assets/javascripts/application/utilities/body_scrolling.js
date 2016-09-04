@@ -1,7 +1,7 @@
-cssManager.disableBodyScroll = function() {
+Aphrodite.disableBodyScroll = function() {
   $("body").addClass("disable-scroll");
 };
 
-cssManager.enableBodyScroll = function() {
+Aphrodite.enableBodyScroll = function() {
   $("body").removeClass("disable-scroll");
 };

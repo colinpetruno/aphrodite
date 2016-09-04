@@ -1,0 +1,23 @@
+<table style="width: 650px; margin: auto; background-color: #ffffff">
+  <tr>
+    <td style="text-align: center" colspan="2">
+      <p style="font-size: 40px; font-family: Helvetica, Arial; color: #777">
+        <%= t(".title") %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= image_tag(image_url("mailers/users_mailer/aphrodite.png")) %>
+    </td>
+    <td style="text-align: left; vertical-align: top; padding-top: 35px; padding-bottom: 35px; padding-left: 10px;">
+      <%= t(".description_html") %>
+      <%= link_to t(".buttons.contact"), new_inquiry_url, style: "border: 1px solid #333; padding: 10px 20px; text-decoration: none; display: inline-block" %>
+      <%= link_to(t(".buttons.create_stylesheet"),
+                  new_stylesheet_url,
+                 style: "background-color: #ff1c1c; display: inline-block; padding: 10px 20px; color: #fff; text-decoration: none; display: inline-block") %>
+      <br>
+    </td>
+  </tr>
+</table>

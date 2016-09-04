@@ -22,6 +22,7 @@ class Registration
     return false unless valid?
 
     save_registration
+    send_welcome_email
   end
 
   def user
@@ -29,6 +30,12 @@ class Registration
   end
 
   private
+
+  def send_welcome_email
+    WelcomeEmailJob.perform_later(user.id)
+  rescue => exception
+    Bugsnag.notify(exception)
+  end
 
   def save_registration
     account.save

@@ -18,6 +18,8 @@ Bundler.require(*Rails.groups)
 
 module CssManager
   class Application < Rails::Application
+    config.active_job.queue_adapter = :resque
+
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.to_prepare do
@@ -36,5 +38,6 @@ module CssManager
       api_key: Rails.application.secrets.mailgun_api_secret,
       domain: "mail.aphroditecss.com"
     }
+    config.action_mailer.preview_path = Rails.root.join("spec", "mailers", "previews").to_s
   end
 end

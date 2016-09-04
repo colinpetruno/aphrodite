@@ -8,4 +8,4 @@
 //= require_tree ./application
 
 
-var cssManager = {};
+window.Aphrodite = {};

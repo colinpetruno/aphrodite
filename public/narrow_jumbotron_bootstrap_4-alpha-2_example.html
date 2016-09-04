@@ -1,12 +1,12 @@
 <html>
 
   <head>
-    <link id="cssManagerStylesheet" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <link id="AphroditeStylesheet" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
 
     <script type="text/javascript">
-      var cssManager = {};
-      cssManager.rootUrl = "stylesheets/";
-      cssManager.getParameterByName = function (name) {
+      var Aphrodite = {};
+      Aphrodite.rootUrl = "stylesheets/";
+      Aphrodite.getParameterByName = function (name) {
           var url = window.location.href;
           name = name.replace(/[\[\]]/g, "\\$&");
           var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
@@ -15,15 +15,15 @@
           if (!results[2]) return '';
           return decodeURIComponent(results[2].replace(/\+/g, " "));
       }
-      cssManager.previewCss = cssManager.getParameterByName("preview-css");
-      var stylesheetId = cssManager.getParameterByName("stylesheetId");
-      if(cssManager.previewCss == "true") {
-        cssManager.styleTag = document.getElementById("cssManagerStylesheet")
+      Aphrodite.previewCss = Aphrodite.getParameterByName("preview-css");
+      var stylesheetId = Aphrodite.getParameterByName("stylesheetId");
+      if(Aphrodite.previewCss == "true") {
+        Aphrodite.styleTag = document.getElementById("AphroditeStylesheet")
         if(parseInt(stylesheetId) > 0){
-          var newUrl = cssManager.rootUrl + parseInt(stylesheetId) + ".css?preview=true"
-          cssManager.styleTag.href = newUrl;
+          var newUrl = Aphrodite.rootUrl + parseInt(stylesheetId) + ".css?preview=true"
+          Aphrodite.styleTag.href = newUrl;
         } else {
-          cssManager.styleTag.href = cssManager.styleTag.href + "?preview=true"
+          Aphrodite.styleTag.href = Aphrodite.styleTag.href + "?preview=true"
         }
       }
     </script>

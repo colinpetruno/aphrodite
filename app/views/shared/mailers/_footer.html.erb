@@ -1,0 +1,18 @@
+<table style="text-align: center; width: 650px; margin: auto; background-color: #434863; color: #fafafa; letter-spacing: 1px; font-weight: 100; font-family: Verdana">
+  <tr>
+    <td style="font-size: 12px; padding-top: 20px">
+        <%= link_to t(".home"), root_url, style: "color: #fafafa; text-decoration: none" %>
+        &nbsp;&nbsp;&nbsp;
+        <%= link_to(t(".features"), root_url(anchor: "features"), style: "color: #fafafa; text-decoration: none") %>
+        &nbsp;&nbsp;&nbsp;
+        <%= link_to(t(".pricing"), root_url(anchor: "pricing"), style: "color: #fafafa; text-decoration: none") %>
+        &nbsp;&nbsp;&nbsp;
+        <%= link_to t(".login"), new_user_session_url, style: "color: #fafafa; text-decoration: none" %>
+    </td>
+  </tr>
+  <tr>
+    <td style="font-size: 12px; padding-top: 10px; padding-bottom: 20px;">
+      <%= t(".crafted_in_boston") %>
+    </td>
+  </tr>
+</table>

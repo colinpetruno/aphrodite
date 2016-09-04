@@ -1,0 +1,12 @@
+en:
+  users_mailer:
+    new_user:
+      subject: "Welcome to Aphrodite!"
+      title: "Thanks for joining Aphrodite!"
+      description_html: >
+        Our goal is to make customizing and previewing css take as little of
+        your time as possible.<br><br>Need help or have feedback? We would love
+        to here from you!<br><br><br>
+      buttons:
+        contact: "Contact Us"
+        create_stylesheet: "Create Your Stylesheet"

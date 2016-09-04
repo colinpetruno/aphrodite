@@ -5,12 +5,14 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= render "shared/fonts" %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <% if Rails.env.production? %>
+      <script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" data-apikey="5064645706772365c1ab89cd8e5a695d"></script>
+    <% end %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= render partial: "application/shared/google_analytics" %>
     <%= render partial: "application/shared/zopim" %>
-
+    <%= render partial: "shared/mixpanel" %>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   </head>
 
