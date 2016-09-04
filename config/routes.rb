@@ -47,7 +47,14 @@ Rails.application.routes.draw do
     resource :stylesheet, only: [:show], defaults: { format: :js }
   end
 
-  mount ResqueWeb::Engine => "/resque_web"
+  resque_web_constraint = lambda do |request|
+    current_user = request.env['warden'].user
+    current_user.can_view_resque? || !Rails.env.production?
+  end
+
+  constraints resque_web_constraint do
+    mount ResqueWeb::Engine => "/resque_web"
+  end
 
   devise_for :users
 end
