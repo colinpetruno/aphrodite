@@ -1,6 +1,5 @@
 Rails.application.configure do
 
-  config.action_controller.asset_host = "aphroditecss.com"
   config.action_mailer.asset_host = "https://www.aphroditecss.com"
   # Settings specified here will take precedence over those in config/application.rb.
 
