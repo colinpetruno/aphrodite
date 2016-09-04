@@ -29,7 +29,7 @@ module CssManager
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s]
 
     config.action_mailer.default_url_options = {
-      host: "mail.aphroditecss.com",
+      host: "aphroditecss.com",
       protocol: "https"
     }
 
