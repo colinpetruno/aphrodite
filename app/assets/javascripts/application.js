@@ -6,6 +6,7 @@
 //= require vendor/card
 //= require prism
 //= require_tree ./application
+//= require_tree ./shared
 
 
 window.Aphrodite = {};

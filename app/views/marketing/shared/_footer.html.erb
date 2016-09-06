@@ -4,8 +4,8 @@
       <div>
         <ul>
           <li><%= link_to t(".home"), root_path %></li>
-          <li><%= link_to(t(".features"), root_path(anchor: "features")) %></li>
-          <li><%= link_to(t(".pricing"), root_path(anchor: "pricing")) %></li>
+          <li><%= link_to(t(".features"), root_path(anchor: "features"), data: { turbolinks: false }) %></li>
+          <li><%= link_to(t(".pricing"), root_path(anchor: "pricing"), data: { turbolinks: false }) %></li>
           <li><a href="#"><%= t(".about") %></a></li>
           <li><%= link_to t(".login"), new_user_session_path %></li>
         </ul>

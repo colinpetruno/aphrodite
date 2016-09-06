@@ -10,7 +10,7 @@ class RegistrationsController < MarketingController
 
     if @registration.register
       sign_in @registration.user
-      redirect_to stylesheets_path
+      redirect_to stylesheets_path(first_visit: true)
     else
       render :new
     end
