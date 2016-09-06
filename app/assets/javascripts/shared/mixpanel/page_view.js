@@ -1,7 +1,4 @@
-$(function(){
-
-});
-
 $(document).on("turbolinks:load", function() {
-  Prism.highlightAll();
+  var pageName = $("body").data("current-page");
+  mixpanel.track("Page View", {"Page Name": pageName });
 });

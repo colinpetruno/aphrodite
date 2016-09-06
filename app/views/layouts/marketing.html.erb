@@ -15,7 +15,7 @@
     <%= render partial: "shared/mixpanel" %>
   </head>
 
-  <body>
+  <body data-current-page="<%= "#{controller_name}##{action_name}" %>">
     <%= yield %>
   </body>
 </html>
