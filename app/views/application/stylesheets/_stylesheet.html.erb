@@ -1,4 +1,4 @@
-<tr>
+<tr class="stylesheet">
   <td>
   <%= link_to edit_stylesheet_path(stylesheet) do %>
     <%= stylesheet.name %>
@@ -17,8 +17,18 @@
     <% end %>
   </td>
   <td>
+    <div class="download-dropdown" role="group">
+      <button type="button" data-toggle="dropdown">
+        <%= t(".download") %>
+      </button>
+      <div>
+        <%= link_to t(".minified"), stylesheet_path(stylesheet) + ".min.css", target: "_blank" %>
+        <%= link_to t(".unminified"), stylesheet_path(stylesheet) + ".css", target: "_blank" %>
+      </div>
+    </div>
+
     <%= simple_form_for(stylesheet, method: :delete) do |f| %>
-      <%= f.submit t(".delete"), class: "btn btn-secondary btn-sm", data: { confirm: "This cannot be undone" } %>
+      <%= f.submit t(".delete"), data: { confirm: t(".delete_confirmation") } %>
     <% end %>
   </td>
 </tr>

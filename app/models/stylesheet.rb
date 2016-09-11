@@ -15,4 +15,12 @@ class Stylesheet < ApplicationRecord
       [framework.capitalize, framework]
     end
   end
+
+  def filename(preview: false)
+    if preview
+      "#{name.parameterize}.css"
+    else
+      "#{name.parameterize}.min.css"
+    end
+  end
 end

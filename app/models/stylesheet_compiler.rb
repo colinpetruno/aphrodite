@@ -35,9 +35,17 @@ class StylesheetCompiler
 
   def compile_stylesheet
     if Rails.env.production?
-      system("/usr/local/sassc/bin/sassc #{source_file} > #{destination_file}")
+      system("/usr/local/sassc/bin/sassc #{source_file} > #{destination_file} #{sassc_flags}")
     else
-      system("/Users/Colin/Projects/sassc/bin/sassc #{source_file} > #{destination_file}")
+      system("/Users/Colin/Projects/sassc/bin/sassc #{source_file} > #{destination_file} #{sassc_flags}")
+    end
+  end
+
+  def sassc_flags
+    if preview
+      ""
+    else
+      "--style compressed"
     end
   end
 

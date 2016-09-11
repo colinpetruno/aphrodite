@@ -16,7 +16,11 @@ en:
         configure_preview: "Configure Preview"
       stylesheet:
         delete: "Delete"
+        delete_confirmation: "This cannot be undone"
+        download: "Download"
+        minified: "Minified"
         preview: "Preview"
+        unminified: "Unminified"
       stylesheets:
         new_stylesheet: "New Stylesheet"
         your_stylesheets: "Your Stylesheets"

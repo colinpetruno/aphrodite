@@ -1,0 +1,18 @@
+.button-dropdown {
+  @extend .btn-group;
+
+  & > button {
+    @extend .btn;
+    @extend .btn-sm;
+    @extend .btn-secondary;
+    @extend .dropdown-toggle;
+  }
+
+  & > div {
+    @extend .dropdown-menu;
+  }
+
+  & > div > a {
+    @extend .dropdown-item;
+  }
+}

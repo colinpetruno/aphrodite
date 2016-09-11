@@ -33,7 +33,6 @@ class Application::StylesheetsController < AuthenticatedController
   end
 
   def show
-    # id = 7-stylesheet-name.css
     @stylesheet = Stylesheet.find(params[:id])
 
     render json: {}, status: :ok
@@ -41,8 +40,9 @@ class Application::StylesheetsController < AuthenticatedController
     respond_to do |format|
       format.css do
         send_file(StylesheetResponder.
-                    new(@stylesheet, params[:preview]).
+                    new(@stylesheet, preview?).
                     path,
+                  filename: @stylesheet.filename(preview: preview?),
                   type: "text/css")
       end
     end
@@ -72,8 +72,12 @@ class Application::StylesheetsController < AuthenticatedController
 
   private
 
+  def preview?
+    params[:preview] || params[:id].to_s.exclude?(".min.css")
+  end
+
   def set_cache_headers
-    unless params[:preview]
+    unless preview?
       response.headers["Cache-Control"] = "public, max-age=31536000"
       remove_keys = %w(X-Runtime Server X-XSS-Protection X-Runtime X-Request-Id X-Frame-Options X-Content-Type-Options Content-Transfer-Encoding Set-Cookie)
       response.headers.delete_if{|key| remove_keys.include? key}
