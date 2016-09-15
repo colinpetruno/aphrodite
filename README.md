@@ -28,3 +28,11 @@ see it.
 5. Run a worker
       $ bundle exec rake:resque:work QUEUE=*
 
+
+## Deploying
+
+1. Make a commit
+
+2. Push to master
+
+3. Codeship will test and deploy if the build passes
