@@ -4,6 +4,7 @@
 //= require tether
 //= require turbolinks
 //= require vendor/card
+//= require vendor/minicolors
 //= require prism
 //= require_tree ./application
 //= require_tree ./shared

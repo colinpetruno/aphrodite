@@ -13,4 +13,20 @@ RSpec.describe Variable, type: :model do
         to eql([variable2.id, variable3.id, variable1.id])
     end
   end
+
+  describe "#input_type" do
+    context "if it is nil" do
+      it "shhould return :string" do
+        variable = create(:variable, variable_type: nil)
+        expect(variable.input_type).to eql(:string)
+      end
+    end
+
+    context "if it is not nil" do
+      it "should be returned as a symbol" do
+        variable = create(:variable, variable_type: 0)
+        expect(variable.input_type).to eql(:color)
+      end
+    end
+  end
 end
