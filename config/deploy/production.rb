@@ -64,3 +64,4 @@ set :workers, { "stylesheet_builds" => 2, "default" => 1 }
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+set :bundle_without, %w{development test}.join(' ')
