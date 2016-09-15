@@ -7,16 +7,16 @@ RSpec.describe PricingPlan, type: :model do
 
       expect(pricing_plan.label).
         to eql(I18n.t(".models.pricing_plan.label",
-                      price: "84.93",
+                      price: "84",
                       name: "Test Plan" ))
     end
   end
 
   describe "#price_in_dollars" do
-    it "should be 1/100th of the price" do
+    it "should only be a whole number" do
       pricing_plan = create(:pricing_plan, price: 394)
 
-      expect(pricing_plan.price_in_dollars).to eql(3.94)
+      expect(pricing_plan.price_in_dollars).to eql(3)
     end
   end
 end
