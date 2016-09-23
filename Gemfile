@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", ">= 5.0.0.rc2", "< 5.1"
+gem "rails", "~> 5.0.0"
 
 gem "acts_as_list"
 gem "bcrypt", "~> 3.1.7"
