@@ -18,7 +18,7 @@ class SourceFileCopier
   private
 
   def ensure_folder_exists
-    unless Dir.exists?(destination_path)
+    unless Dir.exist?(destination_path)
       FileUtils.mkdir_p(destination_path)
     end
   end

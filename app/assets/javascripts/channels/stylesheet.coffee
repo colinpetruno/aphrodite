@@ -1,4 +1,7 @@
-App.stylesheet = App.cable.subscriptions.create { channel: "StylesheetChannel", stylesheet_id: $("#edit-stylesheet").data("stylesheet-id") },
+App.stylesheet = App.cable.subscriptions.create {
+  channel: "StylesheetChannel",
+  stylesheet_id: $("#edit-stylesheet").data("stylesheet-id")
+},
   connected: ->
     # Called when the subscription is ready for use on the server
 
