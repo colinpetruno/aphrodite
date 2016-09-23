@@ -46,6 +46,10 @@ group :development do
   gem "web-console", "~> 3.0"
 end
 
+group :test do
+  gem "codeclimate-test-reporter"
+end
+
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.1.0"
   gem "rails-assets-prism"
