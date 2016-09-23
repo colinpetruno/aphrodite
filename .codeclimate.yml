@@ -2,6 +2,11 @@
 engines:
   brakeman:
     enabled: true
+    exclude_fingerprints:
+      - d505046dbd9651a0c3c7f63fa2b21d553f3a8586ac2060bb9296a35577cc6914
+      - df525ddb1bade6a21547b0fd2ce76d71abe317a84e7a132beed34e73efb3c163
+      - 2a6cf715d080ea9319af07478003da9b12641bee0b463633606a65074a93b5b4
+      - e85bc340c792fe8e7fcfc167a6f7b5aac369e6d37a083bc32ace8bf6e952158d
   bundler-audit:
     enabled: true
   coffeelint:
