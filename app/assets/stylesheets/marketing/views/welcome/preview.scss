@@ -10,21 +10,21 @@
     @include make-row();
 
     & > div {
-      @include make-col();
-      @include make-col-span(6);
+      @include make-col-ready();
+      @include make-col(6);
 
     }
 
     & > div:first-child {
       @include make-col-push(6);
-      @include make-col-span(6);
+      @include make-col(6);
 
       min-height: 350px;
       padding-top: 3em;
 
       @include media-breakpoint-down(sm) {
         @include make-col-push(0);
-        @include make-col-span(12);
+        @include make-col(12);
 
         min-height: 0;
         text-align: center;
@@ -42,7 +42,7 @@
 
       @include media-breakpoint-down(sm) {
         @include make-col-pull(0);
-        @include make-col-span(12);
+        @include make-col(12);
       }
     }
   }

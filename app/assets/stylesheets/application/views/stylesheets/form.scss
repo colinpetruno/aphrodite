@@ -10,7 +10,7 @@
   }
 
   select {
-    @extend .c-select;
+    // @extend .c-select;
   }
 
   & > div {
@@ -19,16 +19,16 @@
 
   & > div > div {
     @include emphasized-box($white);
-    @include make-col();
+    @include make-col-ready();
     @include make-col-offset(3);
-    @include make-col-span(6);
+    @include make-col(6);
     @include padding(3rem null);
 
     text-align: center;
 
     @media (max-width: 34em) {
       @include make-col-offset(0);
-      @include make-col-span(12);
+      @include make-col(12);
     }
   }
 }

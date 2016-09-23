@@ -2,8 +2,8 @@
   @include make-row();
 
   & > div {
-    @include make-col();
-    @include make-col-span(6);
+    @include make-col-ready();
+    @include make-col(6);
 
     background-color: #BB4430;
     color: #feffe7;
@@ -17,14 +17,14 @@
     }
 
     @media (max-width: 34em) {
-      @include make-col-span(12);
+      @include make-col(12);
     }
   }
 
   &.narrow {
     & > div {
-      @include make-col();
-      @include make-col-span(4);
+      @include make-col(4);
+      // @include make-col-span(4);
 
       &:first-child {
         @include make-col-offset(2);
@@ -32,7 +32,7 @@
 
       @media (max-width: 34em) {
         @include make-col-offset(0);
-        @include make-col-span(12);
+        @include make-col(12);
       }
     }
   }

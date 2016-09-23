@@ -8,9 +8,9 @@
   }
 
   & > div > div {
-    @include make-col();
+    @include make-col-ready();
     @include make-col-offset(4);
-    @include make-col-span(4);
+    @include make-col(4);
     @include emphasized-box($white);
 
     @include padding(3em null);
@@ -23,7 +23,7 @@
   @media (max-width: map-get($grid-breakpoints, sm)) {
     & > div > div {
       @include make-col-offset(1);
-      @include make-col-span(10);
+      @include make-col(10);
     }
   }
 }

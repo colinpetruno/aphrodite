@@ -8,11 +8,11 @@
     @include make-row();
 
     & > div {
-      @include make-col();
+      @include make-col-ready();
     }
 
     & > div:first-child {
-      @include make-col-span(6);
+      @include make-col(6);
       @include make-col-push(6);
 
       background-image: image-url("marketing/index/slack.png");
@@ -24,7 +24,7 @@
 
       @include media-breakpoint-down(sm) {
         @include make-col-push(0);
-        @include make-col-span(12);
+        @include make-col(12);
         min-height: 250px;
       }
     }
@@ -32,14 +32,14 @@
     & > div:last-child {
       @include make-col-offset(1);
       @include make-col-pull(6);
-      @include make-col-span(5);
+      @include make-col(5);
 
       padding-top: 3em;
 
       @include media-breakpoint-down(sm) {
         @include make-col-offset(0);
         @include make-col-pull(0);
-        @include make-col-span(12);
+        @include make-col(12);
 
         padding-bottom: 1em;
         padding-top: 1em;

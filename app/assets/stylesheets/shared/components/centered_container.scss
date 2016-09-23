@@ -7,7 +7,7 @@
   }
 
   & > div > div {
-    @include make-col();
-    @include make-col-span(12);
+    @include make-col-ready();
+    @include make-col(12);
   }
 }

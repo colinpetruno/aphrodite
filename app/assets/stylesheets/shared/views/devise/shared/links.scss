@@ -4,8 +4,8 @@
   margin-top: 2em;
 
   & > div {
-    @include make-col();
-    @include make-col-span(12);
+    @include make-col-ready();
+    @include make-col(12);
 
     @extend .text-xs-center;
   }

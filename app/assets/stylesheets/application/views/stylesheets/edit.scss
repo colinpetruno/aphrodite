@@ -54,15 +54,15 @@
       border-radius: 3px;
 
       & > div {
-        @include make-col();
-        @include make-col-span(10);
+        @include make-col-ready();
+        @include make-col(10);
         background-image: image-url("application/stylesheets/edit/browser_left.png");
         background-repeat: no-repeat;
         min-height: 69px;
       }
 
       & > div:last-child {
-        @include make-col-span(2);
+        @include make-col(2);
         background-image: image-url("application/stylesheets/edit/browser_right.png");
         background-position: right;
         background-repeat: no-repeat;
