@@ -36,3 +36,6 @@ see it.
 2. Push to master
 
 3. Codeship will test and deploy if the build passes
+
+
+[ ![Codeship Status for colinpetruno/aphrodite](https://codeship.com/projects/93e020f0-5d61-0134-e1a2-7a545341ab33/status?branch=master)](https://codeship.com/projects/173943)
