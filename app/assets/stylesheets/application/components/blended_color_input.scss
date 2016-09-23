@@ -1,0 +1,13 @@
+.blended-color-input {
+  .input-group > .minicolors {
+    @extend .input-group-addon;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    span {
+      z-index: 10;
+    }
+  }
+}
