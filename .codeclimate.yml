@@ -42,3 +42,4 @@ exclude_paths:
 - vendor/
 - app/assets/javascripts/vendor
 - app/assets/stylesheets/application/vendor
+- lib/frameworks

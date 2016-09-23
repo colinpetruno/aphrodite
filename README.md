@@ -1,4 +1,7 @@
 # Welcome to Aphrodite 
+[ ![Codeship Status for colinpetruno/aphrodite](https://codeship.com/projects/93e020f0-5d61-0134-e1a2-7a545341ab33/status?branch=master)](https://codeship.com/projects/173943)
+[![Code Climate](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/badges/341054e8a12acf1ef1e4/gpa.svg)](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/feed)
+[![Test Coverage](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/badges/341054e8a12acf1ef1e4/coverage.svg)](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/coverage)
 
 Aphrodite is meant to be the simplest way for anyone to configure and preview
 Bootstrap. We do this by allowing the users to customize the sass variables
@@ -39,3 +42,5 @@ see it.
 
 
 [ ![Codeship Status for colinpetruno/aphrodite](https://codeship.com/projects/93e020f0-5d61-0134-e1a2-7a545341ab33/status?branch=master)](https://codeship.com/projects/173943)
+[![Code Climate](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/badges/341054e8a12acf1ef1e4/gpa.svg)](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/feed)
+[![Test Coverage](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/badges/341054e8a12acf1ef1e4/coverage.svg)](https://codeclimate.com/repos/57e5aa71f5705446f8004db9/coverage)

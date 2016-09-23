@@ -14,8 +14,9 @@ class CacheInvalidator
     if response[:success]
       true
     else
+      Rails.logger.error("CacheInvalidator Error:")
       Rails.logger.error(response)
-      # TODO: Add Rollbar errors here
+      Bugsnag.notify("Cache Invalidator Failed")
       false
     end
   end
