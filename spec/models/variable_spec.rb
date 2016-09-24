@@ -1,6 +1,21 @@
 require "rails_helper"
 
 RSpec.describe Variable, type: :model do
+  describe ".from" do
+    it "should return a variable with the same properties" do
+      default_variable = create(:default_variable)
+      variable = Variable.from(default_variable)
+
+      expect(variable.name).to eql(default_variable.name)
+      expect(variable.default).to eql(true)
+      expect(variable.category_id).to eql(default_variable.category_id)
+      expect(variable.variable_type).to eql(default_variable.variable_type)
+      expect(variable.value).to eql(default_variable.value)
+      expect(variable.preview_value).to eql(default_variable.value)
+      expect(variable.position).to eql(default_variable.position)
+    end
+  end
+
   describe "#where" do
     it "should return records in the proper order" do
       stylesheet = create(:stylesheet)
