@@ -17,7 +17,7 @@ en:
       build:
         title: Build
         description: >
-          Create your own customized bootstrap stylesheets without
+          Create your own customized bootstrap themes without
           having to edit any Less or Sass. No need for complicated build
           pipelines or compilers.
         how_it_works: "How It Works"
