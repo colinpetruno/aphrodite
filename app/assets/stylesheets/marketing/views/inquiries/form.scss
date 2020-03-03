@@ -2,9 +2,9 @@
   @include make-row();
 
   &>div {
-    @include make-col-ready();
+    @include make-col();
     @include make-col-offset(3);
-    @include make-col(6);
+    @include make-col-span(6);
 
     background-color: $white;
     margin-top: 100px;

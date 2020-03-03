@@ -4,7 +4,7 @@ class Variable < ApplicationRecord
 
   default_scope { order(:position) }
 
-  enum variable_type: { color: 0, size: 1, variable: 2, sass: 3 }
+  enum variable_type: { color_type: 0, size_type: 2, variable_type: 2, sass_type: 3 }
 
   def self.from(default_value)
     new(

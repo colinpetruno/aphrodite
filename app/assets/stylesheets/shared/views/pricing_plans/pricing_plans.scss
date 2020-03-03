@@ -7,8 +7,8 @@
   }
 
   article {
-    @include make-col-ready();
-    @include make-col(10);
+    @include make-col();
+    @include make-col-span(10);
     @include make-col-offset(1);
   }
 

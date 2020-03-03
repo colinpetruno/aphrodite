@@ -5,7 +5,7 @@
 
   & > a {
     @extend .navbar-brand;
-    @include retina-image(logos/swan_off_white_text, 168px 37px, png, null, null, true);
+    @include img-retina("logos/swan_off_white_text.png", "logos/swan_off_white_text_2x.png", 168px, 37px);
     background-repeat: none;
     color: $white;
     curser: pointer;

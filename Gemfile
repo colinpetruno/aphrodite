@@ -1,14 +1,14 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 5.0.0"
+gem "rails", "~> 6.0.2.1"
 
 gem "acts_as_list"
 gem "bcrypt", "~> 3.1.7"
-gem "bootstrap", "~> 4.0.0.alpha3"
+gem "bootstrap", "= 4.0.0.alpha3"
 gem "bourbon"
 gem "bugsnag"
-gem "coffee-rails", "~> 4.1.0"
-gem "devise", "~> 4.0.0.rc1"
+gem "coffee-rails"
+gem "devise"
 gem "devise_invitable"
 gem "jquery-rails"
 gem "mailgun_rails"

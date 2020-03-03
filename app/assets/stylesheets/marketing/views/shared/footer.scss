@@ -13,8 +13,8 @@ footer.marketing-footer {
     @include make-row();
 
     & > div {
-      @include make-col-ready();
-      @include make-col(12);
+      @include make-col();
+      @include make-col-span(12);
 
       text-align: center;
     }

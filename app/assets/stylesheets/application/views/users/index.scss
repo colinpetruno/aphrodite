@@ -4,8 +4,8 @@
   margin-bottom: 50px;
 
   & > div {
-    @include make-col-ready();
-    @include make-col(6);
+    @include make-col();
+    @include make-col-span(6);
 
     &:last-child {
       @extend .text-xs-right;

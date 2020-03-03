@@ -2,8 +2,8 @@
   @include make-row();
 
   & > div {
-    @include make-col-ready();
-    @include make-col(6);
+    @include make-col();
+    @include make-col-span(6);
     @include make-col-offset(3);
     padding-bottom: 40px;
 
@@ -20,8 +20,8 @@
     @include make-row();
 
     & > div {
-      @include make-col-ready();
-      @include make-col(4);
+      @include make-col();
+      @include make-col-span(4);
     }
   }
 
@@ -32,8 +32,8 @@
     margin-bottom: 40px;
 
     & > div {
-      @include make-col-ready();
-      @include make-col(12);
+      @include make-col();
+      @include make-col-span(12);
       text-align: center;
     }
     background-color: #565758;

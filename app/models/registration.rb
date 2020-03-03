@@ -63,7 +63,7 @@ class Registration
     @account ||= Account.new(
       name: account_name,
       pricing_plan_id: pricing_plan_id,
-      stripe_id: payment_account.id,
+      stripe_id: "fake-bkjdkf-#{DateTime.now.to_i}", # payment_account.id,
       site_url: site_url,
       users_attributes: [{
         email: email,

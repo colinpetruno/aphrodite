@@ -24,14 +24,10 @@ default: &default
 development:
   <<: *default
   database: aphrodite_development
-  username: dev
-  password: development
 
 test:
   <<: *default
   database: aphrodite_test
-  username: dev
-  password: development
 
 production:
   <<: *default
