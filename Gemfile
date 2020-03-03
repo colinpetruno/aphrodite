@@ -4,7 +4,7 @@ gem "rails", "~> 6.0.2.1"
 
 gem "acts_as_list"
 gem "bcrypt", "~> 3.1.7"
-gem "bootstrap", "= 4.0.0.alpha3"
+gem "bootstrap", "4.3.1"
 gem "bourbon"
 gem "bugsnag"
 gem "coffee-rails"
